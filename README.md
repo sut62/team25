@@ -1,1 +1,3 @@
 Nanticha Boonkla  B6007409
+Thanyapong Rotejanateerachot
+B6007553
