@@ -1,7 +1,7 @@
-package com.okta.springbootvue.controller;
+package com.cpe.backend.controller;
 
-import com.okta.springbootvue.entity.Information;
-import com.okta.springbootvue.repository.InformationRepository;
+import com.cpe.backend.entity.Information;
+import com.cpe.backend.repository.InformationRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
