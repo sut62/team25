@@ -33,4 +33,8 @@ public class CompanySize {
 	//mappedBy  = "size"
 	private Collection<Company> register;
 
+	public void setName(String name) {
+        this.name=name;
+	}
+
 }
