@@ -1,4 +1,4 @@
-package com.okta.springbootvue.controller;
+package com.cpe.backend.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,14 +22,13 @@ import java.net.URLDecoder;
 
 import com.cpe.backend.entity.Addjob;
 import com.cpe.backend.entity.Information;
-import com.cpe.backend.entity.entity.User;
-import com.cpe.backend.entity.entity.JobPost;
+import com.cpe.backend.entity.User;
+import com.cpe.backend.entity.JobPost;
 
 import com.cpe.backend.repository.AddjobRepository;
 import com.cpe.backend.repository.InformationRepository;
 import com.cpe.backend.repository.UserRepository;
 import com.cpe.backend.repository.JobPostRepository;
-
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -45,7 +44,6 @@ public class AddjobController {
     @Autowired
     private JobPostRepository jobPostRepository;
     
-    
     AddjobController(AddjobRepository addjobRepository) {
         this.addjobRepository = addjobRepository;
     }
@@ -55,20 +53,20 @@ public class AddjobController {
         return addjobRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @PostMapping("/addjob/{name}/{u}/{phone}/{education}/{j}/{i}/{introduction}")
+    @PostMapping("/addjob/{name}/{user_id}/{phone}/{education}/{jobPost_id}/{information_id}/{introduction}")
     public Addjob newAddjob(Addjob newAddjob, 
     @PathVariable String name,
-    @PathVariable long u,
+    @PathVariable long user_id,
     @PathVariable String phone,
     @PathVariable String education,
-    @PathVariable long j,
-    @PathVariable long i,
+    @PathVariable long jobPost_id,
+    @PathVariable long information_id,
     @PathVariable String introduction)
 
     {
-        Information information = informationRepository.findById(i);
-        User user = userRepository.findById(u);
-        JobPost jobPost = jobPostRepository.findById(j);
+        Information information = informationRepository.findById(information_id);
+        User user = userRepository.findById(user_id);
+        JobPost jobPost = jobPostRepository.findById(jobPost_id);
        
         newAddjob.setName(name);
         newAddjob.setUser(user);
