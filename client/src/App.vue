@@ -2,10 +2,17 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span class="font-weight-light">ระบบสมัครงาน</span>
+        <span>Recruitment </span>
+        <span class="font-weight-light"> System</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn depressed color="primary" @click="home">home</v-btn>
+      <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2"></span>
+      </v-btn>
     </v-app-bar>
 
     <v-content>
@@ -20,12 +27,7 @@
 export default {
   name: 'App',
   data: () => ({
-    
+   
   }),
-  methods: {
-    home(){
-      this.$router.push("/");
-    }
-  }
 };
 </script>
