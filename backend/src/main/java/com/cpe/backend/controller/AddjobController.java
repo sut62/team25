@@ -20,15 +20,15 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.net.URLDecoder;
 
-import com.okta.springbootvue.entity.Addjob;
-import com.okta.springbootvue.entity.Information;
-import com.okta.springbootvue.entity.User;
-import com.okta.springbootvue.entity.JobPost;
+import com.cpe.backend.entity.Addjob;
+import com.cpe.backend.entity.Information;
+import com.cpe.backend.entity.entity.User;
+import com.cpe.backend.entity.entity.JobPost;
 
-import com.okta.springbootvue.repository.AddjobRepository;
-import com.okta.springbootvue.repository.InformationRepository;
-import com.okta.springbootvue.repository.UserRepository;
-import com.okta.springbootvue.repository.JobPostRepository;
+import com.cpe.backend.repository.AddjobRepository;
+import com.cpe.backend.repository.InformationRepository;
+import com.cpe.backend.repository.UserRepository;
+import com.cpe.backend.repository.JobPostRepository;
 
 
 import org.springframework.web.bind.annotation.CrossOrigin;
