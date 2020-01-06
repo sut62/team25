@@ -34,4 +34,8 @@ public class Province {
 	// mappedBy  = "Provincer"
 	private Collection<Company> register;
 
+	public void setName(String name) {
+        this.name=name;
+	}
+
 }
