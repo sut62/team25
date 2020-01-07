@@ -32,4 +32,8 @@ public class Gender {
 	@OneToMany(fetch = FetchType.EAGER)
 	// mappedBy  = "rentCustomer"
 	private Collection<User> rent;
+
+	public void setName(String name){
+    	this.name=name;
+    }
 }

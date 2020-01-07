@@ -32,4 +32,8 @@ public class NameType {
     @OneToMany(fetch = FetchType.EAGER)
     // mappedBy  = "createdBy"
     private Collection<User> rent;
+
+    public void setName(String name){
+    	this.name=name;
+    }
 }

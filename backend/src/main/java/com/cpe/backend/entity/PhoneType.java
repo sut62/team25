@@ -32,4 +32,8 @@ public class PhoneType {
     @OneToMany(fetch = FetchType.EAGER)
     //mappedBy  = "type"
     private Collection<User> rent;
+
+    public void setName(String name){
+    	this.name=name;
+    }
 }
