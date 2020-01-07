@@ -1,6 +1,6 @@
-package com.okta.springbootvue.repository;
+package com.cpe.backend.repository;
 
-import com.okta.springbootvue.entity.Information;
+import com.cpe.backend.entity.Information;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
