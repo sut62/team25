@@ -8,5 +8,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public
 interface JobPostRepository extends JpaRepository<JobPost, Long> {
-
+    JobPost findById(long id);
 }
