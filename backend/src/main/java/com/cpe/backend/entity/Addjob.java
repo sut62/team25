@@ -16,9 +16,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import com.okta.springbootvue.entity.Information;
-import com.okta.springbootvue.entity.User;
-import com.okta.springbootvue.entity.JobPost;
+import com.cpe.backend.entity.Information;
+import com.cpe.backend.entity.User;
+import com.cpe.backend.entity.JobPost;
 
 
 @Data
