@@ -11,7 +11,7 @@
         <v-card max-width="350" class="mx-auto" color="#424242" :elevation="13" dark >
               <v-row justify="center">
                 <v-toolbar-title>
-                  <h1 class="font-weight" dark>ใบสมัครงาน</h1>
+                  <h1 class="font-weight" dark>Apply for a Job</h1>
                 </v-toolbar-title>
               </v-row>
             </v-card>
