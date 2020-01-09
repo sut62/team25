@@ -1,4 +1,4 @@
-template>
+<template>
   <v-card class = "mx-auto" height="100%" width="100%">
     <v-navigation-drawer 
     absolute
