@@ -1,22 +1,18 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-app-bar app color="#BDBDBD">
       <v-toolbar-title class="headline text-uppercase">
         <span>Recruitment </span>
-        <span class="font-weight-light"> System</span>
+        <span class="font-weight-light" > System</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2"></span>
-      </v-btn>
+      <div class="text">
+        <v-btn large outlined rounded class="ma-2" loaders color="#000000" @click="back" dark>Back To HOME</v-btn>
+      </div>
+      <span class="mr-2"></span>
     </v-app-bar>
 
     <v-content>
-      <!-- <VideoRental/> -->
       <router-view />
     </v-content>
   </v-app>
@@ -27,7 +23,12 @@
 export default {
   name: 'App',
   data: () => ({
-   
+
   }),
+  method:{
+    back(){
+     this.$router.push("/home");
+   },
+  }
 };
 </script>
