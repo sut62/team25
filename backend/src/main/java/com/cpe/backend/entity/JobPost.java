@@ -1,22 +1,17 @@
 package com.cpe.backend.entity;
 
 import lombok.*;
-
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Data
 @Entity
@@ -30,36 +25,35 @@ public class JobPost {
     @Column(name = "JOB_POST_ID", unique = true, nullable = true)
     private @NonNull Long id;
 
+    private @NonNull String salary;
+    private @NonNull String educationlevel;
+    private @NonNull String Other_details;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", insertable = true)
+    @JsonManagedReference
     private Position position;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Company.class)
     @JoinColumn(name = "COMPANY_ID", insertable = true)
+    @JsonManagedReference
     private Company company;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Benefit.class)
     @JoinColumn(name = "BENEFIT_ID", insertable = true)
+    @JsonManagedReference
     private Benefit benefit;
 
-    @Column(name="SARALY")
-    private @NonNull String salary;
-    @Column(name="EDUCATIONLEVEL")
-    private @NonNull String educationlevel;
-    @Column(name="OTHER_DETAILS")
-    private @NonNull String Other_details;
-
     public void setBenefit(Benefit benefit) {
-        this.benefit=benefit;
+                this.benefit=benefit;
 	}
 
 	public void setCompany(Company company) {
-        this.company=company;
+                this.company=company;
 	}
 
 	public void setPosition(Position position) {
-        this.position=position;
+                this.position=position;
         }
 
 	public void setOther(String other_details) {
@@ -73,7 +67,4 @@ public class JobPost {
 	public void setSalary(String salary) {
                 this.salary=salary;
 	}
-
-
-
 }
