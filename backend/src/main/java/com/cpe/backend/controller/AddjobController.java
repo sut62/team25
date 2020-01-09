@@ -21,14 +21,14 @@ import java.util.stream.Collectors;
 import java.net.URLDecoder;
 
 import com.cpe.backend.entity.Addjob;
+import com.cpe.backend.entity.Gender;
 import com.cpe.backend.entity.Information;
-import com.cpe.backend.entity.User;
-import com.cpe.backend.entity.JobPost;
+import com.cpe.backend.entity.Position;
 
 import com.cpe.backend.repository.AddjobRepository;
 import com.cpe.backend.repository.InformationRepository;
-import com.cpe.backend.repository.UserRepository;
-import com.cpe.backend.repository.JobPostRepository;
+import com.cpe.backend.repository.GenderRepository;
+import com.cpe.backend.repository.PositionRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -40,9 +40,9 @@ public class AddjobController {
     @Autowired
     private InformationRepository informationRepository;
     @Autowired
-    private UserRepository userRepository;
+    private GenderRepository genderRepository;
     @Autowired
-    private JobPostRepository jobPostRepository;
+    private PositionRepository positionRepository;
     
     AddjobController(AddjobRepository addjobRepository) {
         this.addjobRepository = addjobRepository;
@@ -53,26 +53,26 @@ public class AddjobController {
         return addjobRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @PostMapping("/addjob/{name}/{user_id}/{phone}/{education}/{jobPost_id}/{information_id}/{introduction}")
+    @PostMapping("/addjob/{name}/{gender_id}/{phone}/{education}/{position_id}/{information_id}/{introduction}")
     public Addjob newAddjob(Addjob newAddjob, 
     @PathVariable String name,
-    @PathVariable long user_id,
+    @PathVariable long gender_id,
     @PathVariable String phone,
     @PathVariable String education,
-    @PathVariable long jobPost_id,
+    @PathVariable long position_id,
     @PathVariable long information_id,
     @PathVariable String introduction)
 
     {
         Information information = informationRepository.findById(information_id);
-        User user = userRepository.findById(user_id);
-        JobPost jobPost = jobPostRepository.findById(jobPost_id);
+        Gender gender = genderRepository.findById(gender_id);
+        Position position = positionRepository.findById(position_id);
        
         newAddjob.setName(name);
-        newAddjob.setUser(user);
+        newAddjob.setGender(gender);
         newAddjob.setPhone(phone);
         newAddjob.setEducation(education);
-        newAddjob.setJobPost(jobPost);
+        newAddjob.setPosition(position);
         newAddjob.setInformation(information);
         newAddjob.setIntroduction(introduction);
         
