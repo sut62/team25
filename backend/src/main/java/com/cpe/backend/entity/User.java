@@ -1,22 +1,17 @@
 package com.cpe.backend.entity;
 
 import lombok.*;
-
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-
 
 @Data
 @Entity
@@ -29,32 +24,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="USER_seq")
     @Column(name = "USER_ID", unique = true, nullable = true)
     private @NonNull Long id;
-
     
     private @NonNull String name;
-
-    
     private @NonNull String email;
-
-    
     private @NonNull String password;
-
-    
     private @NonNull String phone;
-
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = NameType.class)
     @JoinColumn(name = "NAMETYPE_ID", insertable = true)
+    @JsonManagedReference
     private NameType nameType;
-
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Gender.class)
     @JoinColumn(name = "GENDER_ID", insertable = true)
+    @JsonManagedReference
     private Gender gender;
-
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = PhoneType.class)
     @JoinColumn(name = "PHONETYPE_ID", insertable = true)
+    @JsonManagedReference
     private PhoneType phoneType;
 
     public void setName(String name){
@@ -84,6 +72,4 @@ public class User {
     public void setPhoneType(PhoneType phoneType) {
         this.phoneType = phoneType;
     }
-
-    
 }
