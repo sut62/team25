@@ -17,8 +17,8 @@ import javax.persistence.FetchType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import com.cpe.backend.entity.Information;
-import com.cpe.backend.entity.User;
-import com.cpe.backend.entity.JobPost;
+import com.cpe.backend.entity.Gender;
+import com.cpe.backend.entity.Position;;
 
 
 @Data
@@ -41,20 +41,20 @@ public class Addjob {
     private @NonNull String education;
     
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
-    @JoinColumn(name = "User_id", insertable = true)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Gender.class)
+    @JoinColumn(name = "GENDER_ID", insertable = true)
     @JsonManagedReference
-    private  User user;
+    private  Gender gender;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Information.class)
     @JoinColumn(name = "Information_id", insertable = true)
     @JsonManagedReference
     private Information information;
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = JobPost.class)
-    @JoinColumn(name = "JobPost_id", insertable = true)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Position.class)
+    @JoinColumn(name = "POSITION_ID", insertable = true)
     @JsonManagedReference
-    private  JobPost jobPost;
+    private  Position position;
 
 	public void setName(String name) {
         this.name=name;
