@@ -1,19 +1,21 @@
 <template>
-
   <v-card class = "mx-auto" height="100%" width="100%">
     <v-navigation-drawer 
     absolute
     src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     width="100%"
     parmanent>
+
   <v-container>
-    <v-card max-width="900" class="mx-auto" color="#E3F2FD">
+    <v-card class="mx-auto" max-width="350" color="#424242" :elevation="13" dark>
       <v-row justify="center">
         <v-toolbar-title><br>
-        <h1>สมัครสมาชิก</h1>
+        <h1 class="font-weight-CONDENSED" dark>Applicant Register</h1><br>
         </v-toolbar-title>
       </v-row>
+      </v-card>
 
+      <v-card max-width="900" class="mx-auto" color="#EEEEEE" :elevation="7"><br>
       <v-row>
       <v-col cols="15">
       <v-form>
@@ -26,27 +28,42 @@
                   item-text="name"
                   item-value="id"
                   :rules="[(v) => !!v || 'Please select NameType']"
-          label="NameType"
-          outlined
+                  label="NameType"
+                  color="#42A5F5"
+                  class="font-weight-bold"
+                  required
+                  placeholder
+                  filied
+                  loading
+                  dense
+                  clearable
           prepend-icon="mdi-account"
         ></v-select>
       </v-col>
 
       <v-col cols="3">
        <v-text-field
+            class="font-weight-bold"
+            outlined
+             loading
+              color="#1E88E5"
             v-model="user.name"
             :items="names"  
-            color="pink accent-1"
-            label="Name"
-            outlined              
+            label="Name"            
           ></v-text-field>
       </v-col>
 
       <v-col cols="3">
       <v-select
           label="Gender"
-                  outlined
-                  color="pink accent-3"
+                  color="#42A5F5"
+                  class="font-weight-bold"
+                  required
+                  placeholder
+                  filied
+                  loading
+                  dense
+                  clearable
                   v-model="user.genderId"
                   :items="genders"
                   item-text="name"
@@ -59,12 +76,14 @@
  <v-row style="height: 75px;" justify="center">
  <v-col cols="3" sm="5">
        <v-text-field
+            class="font-weight-bold"
+            outlined
+             loading
+              color="#1E88E5"
             v-model="user.email"
             :items="emails"
             :rules="emailRules"
-            color="pink accent-1"
             label="Email"
-            outlined
             prepend-icon="mdi-email"
           ></v-text-field>
       </v-col>
@@ -73,7 +92,10 @@
   <v-row style="height: 75px;" justify="center">
  <v-col cols="3" sm="5">
        <v-text-field
-                outlined
+                class="font-weight-bold"
+            outlined
+             loading
+              color="#1E88E5"
                 label="PASSWORD"
                 v-model= "password"
                 :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -90,8 +112,11 @@
 
       <v-col cols="3" sm="5">
        <v-text-field
-                outlined
-                label="ยืนยัน PASSWORD"
+                class="font-weight-bold"
+            outlined
+             loading
+              color="#1E88E5"
+                label="Confirm PASSWORD"
                 v-model= "repassword"
                 :type="show2 ? 'text' : 'password'"
                 :append-icon="show2 ?  'mdi-eye' : 'mdi-eye-off'"
@@ -111,8 +136,14 @@
      <v-col cols="3" sm="4">
        <v-select
           label="PhoneType"
-                  outlined
-                  color="pink accent-4"
+                  color="#42A5F5"
+                  class="font-weight-bold"
+                  required
+                  placeholder
+                  filied
+                  loading
+                  dense
+                  clearable
                   v-model="user.phoneTypeId"
                   :items="phoneTypes"
                   item-text="name"
@@ -123,36 +154,37 @@
 
  <v-col cols="3" sm="4">
        <v-text-field
+       class="font-weight-bold"
+            outlined
+             loading
+              color="#1E88E5"
             v-model="user.phone"
             :items="phones"
             :rules="[rules.nphone]"
-            color="pink accent-1"
             label="Phone"
-            outlined
             prepend-icon="mdi-phone"
           ></v-text-field>
       </v-col>
-
-      
   </v-row><br>
 
-            <v-row>
-
-              <v-col cols="12">
-                <v-btn style="margin-left: 35%;" @click="saveUser" :elevation="7"  color=red>register</v-btn>
-
-                <v-btn style="margin-left: 10%;" @click="back" :elevation="7"  color=red>Back</v-btn>
-              </v-col>
-
-
-            </v-row>
-
-      </v-form>
+  </v-form>
       </v-col>
       </v-row>
-
     </v-card>
-    
+    <br>
+
+            <v-row justify="center">
+            <v-col cols="5000" sm="1000">
+                <div v-if="saveUser">
+                <v-btn rounded @click="saveUser" :class="{ grey: !valid, black: valid }" :elevation="10" dark>
+                <v-icon dark left>mdi-account-plus</v-icon>register</v-btn>
+
+                <v-btn rounded style="margin-left: 15px;" @click="back" :elevation="10">
+                <v-icon dark left>mdi-arrow-left-circle-outline</v-icon>Back</v-btn>
+                </div>
+              </v-col>
+            </v-row>
+
   </v-container>
     </v-navigation-drawer>
   </v-card>
@@ -262,7 +294,7 @@ export default {
         console.log(response);
         
         alert("บันทึกสำเร็จ");
-        this.$router.push("/");
+        this.$router.push("/LoginUser");
          })
         .catch(e => {
         console.log(e);
