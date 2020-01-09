@@ -46,7 +46,7 @@
             </v-col>    
             </v-row>
             
-             <!-- ตำแหน่งงาน-->
+             
             <v-row justify="center">
               <v-col cols="7">
                 <v-select
@@ -65,7 +65,7 @@
               </v-col>
             </v-row>
 
-              <!-- ระดับการศึกษา-->
+             
               <v-row justify="center">
             <v-col cols="6">
               <v-text-field
@@ -98,7 +98,7 @@
             </v-col>
           </v-row>
 
-                <!-- สวัสดิการ-->
+               
               <v-row justify="center">
               <v-col cols="7">
                 <v-select
@@ -117,7 +117,7 @@
               </v-col>
             </v-row>
 
-          <!-- text area-->
+          
                 <v-row justify="center">
            <v-col cols="12"  md="11" >
          <v-textarea
@@ -194,7 +194,7 @@ export default {
   console.log(firstKey);
   },
   methods: {
-  // ดึงข้อมูล 
+  
     getPositions() {
       http
         .get("/position")
@@ -206,7 +206,7 @@ export default {
           console.log(e);
         });
     },
-        // ดึงข้อมูล 
+       
     getBenefits() {
       http
         .get("/benefit")
@@ -232,7 +232,7 @@ export default {
        });
     },
   
-    // function เมื่อกดปุ่ม save
+   
    savejobPost() {
      if (
       !this.company ||
@@ -259,11 +259,11 @@ export default {
       .then(response => {
           console.log(response);
           this.$router.push("/jobpost")
-          //alert("บันทึกข้อมูลสำเร็จ");  
+        
         })
     .catch(e => {
           console.log(e);
-          //alert("บันทึกข้อมูลไม่สำเร็จ");  
+        
         });
         this.summitted = true;
         alert("บันทึกเรียบร้อย");
