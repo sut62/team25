@@ -303,7 +303,7 @@ export default {
       this.$router.push("/registerdata");
     },
     back() {
-      this.$router.push("/");
+      this.$router.push("/logincompany");
     },
     refreshList() {
       this.getCompanyTypes();
