@@ -67,7 +67,7 @@ public class UserController {
     @PathVariable long nameType_id,
     @PathVariable long gender_id,
     @PathVariable long phoneType_id) {
-    //VideoRental newVideoRental = new VideoRental();
+
     NameType nameType = nameTypeRepository.findById(nameType_id);
     Gender gender = genderRepository.findById(gender_id);
     PhoneType phoneType = phoneTypeRepository.findById(phoneType_id);
@@ -80,7 +80,7 @@ public class UserController {
     newUser.setPhoneType(phoneType);
     newUser.setPhone(phone); 
 
-    return userRepository.save(newUser); //บันทึก Objcet ชื่อ VideoRental
+    return userRepository.save(newUser); 
     
     }
 }
