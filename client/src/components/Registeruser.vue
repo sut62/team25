@@ -185,6 +185,10 @@
               </v-col>
             </v-row>
 
+            <div v-if="alert === 'null'"></div>
+      <div v-else-if="alert === 'true'"><v-alert type ="succes">บันทึกสำเร็จ¨</v-alert></div>
+      <div v-else-if="alert === 'false'"><v-alert type ="error">บันทึกไม่สำเร็จ¨</v-alert></div>
+
   </v-container>
     </v-navigation-drawer>
   </v-card>
@@ -219,6 +223,8 @@ export default {
       nameTypes : [],
       genders : [],
       phoneTypes : [],
+      alert: "null",
+      alert1: "null",
 
       rules: {
           required: value => !!value || 'This field is required',
@@ -293,7 +299,7 @@ export default {
         .then(response => {
         console.log(response);
         
-        alert("บันทึกสำเร็จ");
+         this.alert = 'true';
         this.$router.push("/LoginUser");
          })
         .catch(e => {
@@ -301,7 +307,7 @@ export default {
         });
         this.submitted = true;
       }else{
-      alert("บันทึกไม่สำเร็จ");
+      this.alert = 'false'; 
     }
         },
 
