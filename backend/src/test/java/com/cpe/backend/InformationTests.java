@@ -37,7 +37,7 @@ public class InformationTests {
         validator = factory.getValidator();
     }
     @Test
-    void b6008970_testInformationNotnull() {
+    void b6007409_testInformationNotnull() {
         Information information = new Information();
         information.setInformation_type(null);
         Set<ConstraintViolation<Information>> result = validator.validate(information);
@@ -64,7 +64,7 @@ public class InformationTests {
         assertEquals("Information_type", result.iterator().next().getPropertyPath().toString());
     }
     @Test
-    void b6007409_testInsertStatusOK() {
+    void b6007409_testOK() {
         Information information = new Information();
         information.setInformation_type("Website");
         information = informationRepository.saveAndFlush(information);
