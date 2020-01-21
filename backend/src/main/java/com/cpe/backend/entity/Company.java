@@ -13,6 +13,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -25,10 +31,20 @@ public class Company {
     @Column(name = "COMPANY_ID", unique = true, nullable = true)
     private @NonNull Long id;
 
-    
-    private @NonNull String name;
-    private @NonNull String password;
-    private @NonNull String email;
+    @NotNull
+    @Size(min=6,max=50)
+    @Column(name = "COMPANY_NAME")
+    private String name;
+
+    @NotNull
+    @Size(min=10,max=30)
+    @Column(name = "COMPANY_PASSWORD")
+    private String password;
+
+    @NotNull
+    @Pattern(regexp = "^(.+)@(.+)$")
+    @Column(name = "COMPANY_EMAIL")
+    private String email;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Province.class)
     @JoinColumn(name = "PROVINCE_ID", insertable = true)
