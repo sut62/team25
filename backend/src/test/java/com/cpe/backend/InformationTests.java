@@ -48,7 +48,7 @@ public class InformationTests {
     @Test
     void b6007409_testTypeMustGreaterEqual4() {
         Information information = new Information();
-        information.setInformation_type("123");
+        information.setInformation_type("ttt");
         Set<ConstraintViolation<Information>> result = validator.validate(information);
         assertEquals(1, result.size());
         assertEquals("size must be between 4 and 30", result.iterator().next().getMessage());
@@ -57,7 +57,7 @@ public class InformationTests {
     @Test
     void b6007409_testTypeMustLessEqual30() {
         Information information = new Information();
-        information.setInformation_type("1234567890123456789012345678901");
+        information.setInformation_type("Arhhassdaassadasdasdasdadasdasdasdasdasd");
         Set<ConstraintViolation<Information>> result = validator.validate(information);
         assertEquals(1, result.size());
         assertEquals("size must be between 4 and 30", result.iterator().next().getMessage());
@@ -70,6 +70,15 @@ public class InformationTests {
         information = informationRepository.saveAndFlush(information);
         Optional<Information> found = informationRepository.findById(information.getInformation_id());
         assertEquals(information.getInformation_type(), found.get().getInformation_type());
+    }
+    void b6007409_testPattren(){
+        Information information = new Information();
+        information.setInformation_type("WebsiteAAA123");
+        Set<ConstraintViolation<Information>> result = validator.validate(information);
+        assertEquals(1, result.size());
+        ConstraintViolation<Information> message = result.iterator().next();
+        assertEquals("must match \"[a-zA-Z]\"",message.getMessage());
+        assertEquals("Information_type",message.getPropertyPath().toString());
     }
 }
 
