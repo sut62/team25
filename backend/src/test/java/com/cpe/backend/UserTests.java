@@ -90,21 +90,63 @@ public class UserTests {
     }
 
     @Test
-    void b6026493_testUserPhoneMustHaveNumber() {
+    void b6026493_testPhoneMinSize() {
         User user = new User();
         user.setName("Nuttawan Pluemsoontorn");
         user.setEmail("amp@gmail.com");
         user.setPassword("12345678");
-        user.setPhone("ABC2345678");
+        user.setPhone("12345678");
 
         Set<ConstraintViolation<User>> result = validator.validate(user);
 
+        
         assertEquals(1, result.size());
 
+        
         ConstraintViolation<User> v = result.iterator().next();
-        assertEquals("must match \"\\d{10}\"", v.getMessage());
+        assertEquals("size must be between 9 and 10", v.getMessage());
         assertEquals("phone", v.getPropertyPath().toString());
     }
+
+    @Test
+    void b6026493_testPhoneMaxSize() {
+        User user = new User();
+        user.setName("Nuttawan Pluemsoontorn");
+        user.setEmail("amp@gmail.com");
+        user.setPassword("12345678");
+        user.setPhone("12345678901");
+
+        Set<ConstraintViolation<User>> result = validator.validate(user);
+
+        
+        assertEquals(1, result.size());
+
+        
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("size must be between 9 and 10", v.getMessage());
+        assertEquals("phone", v.getPropertyPath().toString());
+    }
+
+    @Test
+    void b6026493_testPhone() {
+        User user = new User();
+        user.setName("Nuttawan Pluemsoontorn");
+        user.setEmail("amp@gmail.com");
+        user.setPassword("12345678");
+        user.setPhone("A234567890");
+
+        Set<ConstraintViolation<User>> result = validator.validate(user);
+
+        // result ต้องมี error 1 ค่าเท่านั้น
+        assertEquals(1, result.size());
+
+        // error message ตรงชนิด และถูก field
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("must match \"^[0-9]*$\"", v.getMessage());
+        assertEquals("phone", v.getPropertyPath().toString());
+    }
+
+    
 
     
 }
