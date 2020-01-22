@@ -12,6 +12,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+
 
 @Data
 @Entity
@@ -23,11 +28,20 @@ public class JobPost {
     @SequenceGenerator(name="job_post_seq",sequenceName="job_post_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="job_post_seq")
     @Column(name = "JOB_POST_ID", unique = true, nullable = true)
+    
+    
     private @NonNull Long id;
 
-    private @NonNull String salary;
-    private @NonNull String educationlevel;
-    private @NonNull String Other_details;
+    @NotNull
+    @Size(min=1, max=10)
+    private String salary;
+
+    @NonNull
+    @Pattern(regexp = "^[A-z0-9]*$")
+    private String educationlevel;
+
+    @NonNull
+    private String Other_details;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", insertable = true)
@@ -66,5 +80,5 @@ public class JobPost {
 
 	public void setSalary(String salary) {
                 this.salary=salary;
-	}
+        }
 }
