@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.FetchType;
 
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Pattern;
+
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -32,6 +35,7 @@ public class Information {
     
     @NotNull
     @Size(min=4, max=30)
+    @Pattern(regexp = "[a-zA-Z]{1,50}$")
     @Column(name="Information_type")
     private String Information_type;
     @OneToMany(fetch = FetchType.EAGER)
