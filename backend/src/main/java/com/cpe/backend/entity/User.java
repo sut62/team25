@@ -19,9 +19,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 
 @Data
 @Entity
@@ -38,11 +39,16 @@ public class User {
     @NotNull
     private @NonNull String name;
 
+    @NotNull
     @Email
     private @NonNull String email;
+
+    @NotNull
     private @NonNull String password;
 
-    @Pattern(regexp = "\\d{10}")
+    @NotNull
+    @Size(min=9,max=10)
+     @Pattern(regexp = "^[0-9]*$")
     private @NonNull String phone;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = NameType.class)
