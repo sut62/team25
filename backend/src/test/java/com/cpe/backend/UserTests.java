@@ -43,9 +43,7 @@ public class UserTests {
         user.setPassword("12345678");
         user.setEmail("amp@gmail.com");
         user.setPhone("0123456789");
-
         user = userRepository.saveAndFlush(user);
-
         Optional<User> found = userRepository.findById(user.getId());
         assertEquals("Nuttawan Pluemsoontorn", found.get().getName());
         assertEquals("12345678", found.get().getPassword());
@@ -56,34 +54,26 @@ public class UserTests {
     @Test
     void b6026493_testUserNameMustNotBeNull() {
         User user = new User();
-       
         user.setName(null);
         user.setEmail("amp@gmail.com");
         user.setPassword("12345678");
         user.setPhone("0123456789");
-
         Set<ConstraintViolation<User>> result = validator.validate(user);
-       
-       assertEquals(1, result.size());
-
-       ConstraintViolation<User> v = result.iterator().next();
-       assertEquals("must not be null", v.getMessage());
-       assertEquals("name", v.getPropertyPath().toString());
+        assertEquals(1, result.size());
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("must not be null", v.getMessage());
+        assertEquals("name", v.getPropertyPath().toString());
     }
 
     @Test
     void b6026493_testUserEmailMustHaveAddress() {
         User user = new User();
-
         user.setName("Nuttawan Pluemsoontorn");
         user.setEmail("amp.com");
         user.setPassword("12345678");
         user.setPhone("0123456789");
-
         Set<ConstraintViolation<User>> result = validator.validate(user);
-
         assertEquals(1, result.size());
-
         ConstraintViolation<User> v = result.iterator().next();
         assertEquals("must be a well-formed email address", v.getMessage());
         assertEquals("email", v.getPropertyPath().toString());
@@ -96,13 +86,8 @@ public class UserTests {
         user.setEmail("amp@gmail.com");
         user.setPassword("12345678");
         user.setPhone("12345678");
-
         Set<ConstraintViolation<User>> result = validator.validate(user);
-
-        
-        assertEquals(1, result.size());
-
-        
+        assertEquals(1, result.size()); 
         ConstraintViolation<User> v = result.iterator().next();
         assertEquals("size must be between 9 and 10", v.getMessage());
         assertEquals("phone", v.getPropertyPath().toString());
@@ -115,13 +100,8 @@ public class UserTests {
         user.setEmail("amp@gmail.com");
         user.setPassword("12345678");
         user.setPhone("12345678901");
-
         Set<ConstraintViolation<User>> result = validator.validate(user);
-
-        
         assertEquals(1, result.size());
-
-        
         ConstraintViolation<User> v = result.iterator().next();
         assertEquals("size must be between 9 and 10", v.getMessage());
         assertEquals("phone", v.getPropertyPath().toString());
@@ -134,19 +114,10 @@ public class UserTests {
         user.setEmail("amp@gmail.com");
         user.setPassword("12345678");
         user.setPhone("A234567890");
-
         Set<ConstraintViolation<User>> result = validator.validate(user);
-
-        // result ต้องมี error 1 ค่าเท่านั้น
         assertEquals(1, result.size());
-
-        // error message ตรงชนิด และถูก field
         ConstraintViolation<User> v = result.iterator().next();
         assertEquals("must match \"^[0-9]*$\"", v.getMessage());
         assertEquals("phone", v.getPropertyPath().toString());
-    }
-
-    
-
-    
+    }        
 }
