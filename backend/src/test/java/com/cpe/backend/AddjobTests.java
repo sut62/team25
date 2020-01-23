@@ -37,16 +37,16 @@ public class AddjobTests {
     @Test
     void b6007409_testAddjobSuccess() {
         Addjob addjob = new Addjob();
-        addjob.setName("Nuttawan Pluemsoontorn");
-        addjob.setIntroduction("hello Wolrd");
+        addjob.setName("Nanticha Boonkla");
+        addjob.setIntroduction("hello World");
         addjob.setEducation("m6/6");
         addjob.setPhone("0123456789");
 
         addjob = addjobRepository.saveAndFlush(addjob);
 
         Optional<Addjob> found = addjobRepository.findById(addjob.getId());
-        assertEquals("Nuttawan Pluemsoontorn", found.get().getName());
-        assertEquals("hello Wolrd", found.get().getIntroduction());
+        assertEquals("Nanticha Boonkla", found.get().getName());
+        assertEquals("hello World", found.get().getIntroduction());
         assertEquals("m6/6", found.get().getEducation());
         assertEquals("0123456789", found.get().getPhone());
     }
@@ -55,7 +55,7 @@ public class AddjobTests {
         Addjob addjob = new Addjob();
        
         addjob.setName(null);
-        addjob.setIntroduction("hello Wolrd");
+        addjob.setIntroduction("hello World");
         addjob.setEducation("m6/6");
         addjob.setPhone("0123456789");
 
@@ -71,8 +71,8 @@ public class AddjobTests {
     @Test
     void b6007409_testPhoneMinSize() {
         Addjob addjob = new Addjob();
-        addjob.setName("Nuttawan Pluemsoontorn");
-        addjob.setIntroduction("hello Wolrd");
+        addjob.setName("Nanticha Boonkla");
+        addjob.setIntroduction("hello World");
         addjob.setEducation("m6/6");
         addjob.setPhone("12345678");
 
@@ -87,8 +87,8 @@ public class AddjobTests {
     @Test
     void b6007409_testPhoneMaxSize() {
         Addjob addjob = new Addjob();
-        addjob.setName("Nuttawan Pluemsoontorn");
-        addjob.setIntroduction("hello Wolrd");
+        addjob.setName("Nanticha Boonkla");
+        addjob.setIntroduction("hello World");
         addjob.setEducation("m6/6");
         addjob.setPhone("12345678901");
 
@@ -104,8 +104,8 @@ public class AddjobTests {
     @Test
     void b6007409_testPhonePattern() {
         Addjob addjob = new Addjob();
-        addjob.setName("Nuttawan Pluemsoontorn");
-        addjob.setIntroduction("hello Wolrd");
+        addjob.setName("Nanticha Boonkla");
+        addjob.setIntroduction("hello World");
         addjob.setEducation("m6/6");
         addjob.setPhone("A234567890");
 
@@ -124,7 +124,7 @@ public class AddjobTests {
     void b6007409_testIntroductionMustNotBeNull() {
         Addjob addjob = new Addjob();
        
-        addjob.setName("Nuttawan Pluemsoontorn");
+        addjob.setName("Nanticha Boonkla");
         addjob.setIntroduction(null);
         addjob.setEducation("m6/6");
         addjob.setPhone("0123456789");
@@ -142,7 +142,7 @@ public class AddjobTests {
     void b6007409_testEducationMustNotBeNull() {
         Addjob addjob = new Addjob();
        
-        addjob.setName("Nuttawan Pluemsoontorn");
+        addjob.setName("Nanticha Boonkla");
         addjob.setIntroduction("helloooo");
         addjob.setEducation(null);
         addjob.setPhone("0123456789");
