@@ -67,11 +67,11 @@ public class JobPostTests {
 
         ConstraintViolation<JobPost> v = result.iterator().next();
 
-        assertEquals("must match \"^[A-z0-9]*$\"", v.getMessage());
+        assertEquals("must match \"^[.A-Za-z0-9ก-ฮะ-๙]*$\"", v.getMessage());
         assertEquals("educationlevel", v.getPropertyPath().toString());
     }
     @Test
-    void b6020156_testSalaryMustLessEqual10() {
+    void b6020156_testSalaryMustLessEqual20() {
         JobPost j3 = new JobPost();
         j3.setSalary("100000000000000000000");
         j3.setEducationlevel("PhD");
@@ -80,7 +80,7 @@ public class JobPostTests {
         assertEquals(1, result.size());
 
         ConstraintViolation<JobPost> v = result.iterator().next();
-        assertEquals("size must be between 1 and 10",  v.getMessage());
+        assertEquals("size must be between 1 and 20",  v.getMessage());
         assertEquals("salary", v.getPropertyPath().toString());
     }
     @Test
