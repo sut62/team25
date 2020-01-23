@@ -123,7 +123,7 @@
                   :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                   :rules="[rules.required, rules.min]"
                   :type="show1 ? 'text' : 'password'"
-                  hint="At least 8 characters"
+                  hint="At least 10 characters"
                   prepend-icon="mdi-textbox-password"
                   required
                   counter
@@ -145,7 +145,7 @@
                   :type="show2 ? 'text' : 'password'"
                   :append-icon="show2 ?  'mdi-eye' : 'mdi-eye-off'"
                   :rules="[rules.required,rules.checkpass]"
-                  hint="At least 8 characters"
+                  hint="At least 10 characters"
                   prepend-icon="mdi-textbox-password"
                   required
                   counter
@@ -172,6 +172,10 @@
                 </div>
               </v-col>
             </v-row>
+
+      <div v-if="alert === 'null'"></div>
+      <div v-else-if="alert === 'true'"><v-alert type ="succes">บันทึกสำเร็จ</v-alert></div>
+      <div v-else-if="alert === 'false'"><v-alert type ="error">บันทึกไม่สำเร็จ</v-alert></div>
 
   </v-container>
   </v-navigation-drawer>
@@ -205,6 +209,8 @@ export default {
       provinces : [],
       sizes : [],
       passwords : [],
+      alert: "null",
+      alert1: "null",
 
        rules: {
           required: value => !!value || 'This field is required',
@@ -257,7 +263,20 @@ export default {
         });
     },
      saveCompany() {
-       if((this.password == this.repassword) && (this.password.length>=10 || this.repassword.length>=10)
+
+       if (
+        !this.company.name ||
+        !this.company.email ||
+        !this.password ||
+        !this.repassword ||
+        !this.company.companySizeId ||
+        !this.company.provinceId ||
+        !this.company.companyTypeId
+        ){
+        this.alert = 'false';
+        }
+
+       else if((this.password == this.repassword) && (this.password.length>=10 || this.repassword.length>=10)
       ){
       http
         .post(
@@ -277,15 +296,14 @@ export default {
         )
         .then(response => {
         console.log(response);
-        alert("บันทึกสำเร็จ");
-        this.$router.push("/logincompany");
-         })
+        this.alert = 'true';
+        })
         .catch(e => {
         console.log(e);
         });
         this.submitted = true;
       }else{
-      alert("บันทึกไม่สำเร็จ");
+      this.alert = 'false'; 
       }
         },
 
