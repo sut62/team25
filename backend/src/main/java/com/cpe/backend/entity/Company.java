@@ -33,17 +33,14 @@ public class Company {
 
     @NotNull
     @Size(min=6,max=50)
-    @Column(name = "COMPANY_NAME")
     private String name;
 
     @NotNull
-    @Size(min=10,max=30)
-    @Column(name = "COMPANY_PASSWORD")
+    @Size(min=10,max=20)
     private String password;
 
     @NotNull
     @Pattern(regexp = "^(.+)@(.+)$")
-    @Column(name = "COMPANY_EMAIL")
     private String email;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Province.class)
