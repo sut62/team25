@@ -16,8 +16,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-
-
 @Data
 @Entity
 @NoArgsConstructor
@@ -33,11 +31,11 @@ public class JobPost {
     private @NonNull Long id;
 
     @NotNull
-    @Size(min=1, max=10)
+    @Size(min=1, max=20)
     private String salary;
 
     @NonNull
-    @Pattern(regexp = "^[A-z0-9]*$")
+    @Pattern(regexp = "^[.A-Za-z0-9ก-ฮะ-๙]*$")
     private String educationlevel;
 
     @NonNull
