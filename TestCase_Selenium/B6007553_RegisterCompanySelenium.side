@@ -1,0 +1,528 @@
+{
+  "id": "f8273b77-daec-46dd-9303-a7b4a0b77994",
+  "version": "2.0",
+  "name": "Register Company Test",
+  "url": "http://localhost:8080/logincompany",
+  "tests": [{
+    "id": "9b924d84-de26-432f-a0eb-fe002a879b39",
+    "name": "Register Company Pass",
+    "commands": [{
+      "id": "25bac9fa-2730-4ba0-8183-3cf56e9b8fc8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/logincompany",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59b6b6b1-2b8e-440c-bdd5-fd8c07f80b7a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x849",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9878d733-6577-4a26-9665-32e2877171df",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-weight-black:nth-child(2) > .v-btn__content",
+      "targets": [
+        ["css=.font-weight-black:nth-child(2) > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[6]/div/button[2]/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1321acf6-be1e-400b-9fc1-70ea500deba0",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-41",
+      "targets": [
+        ["id=input-41", "id"],
+        ["css=#input-41", "css:finder"],
+        ["xpath=//input[@id='input-41']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div[2]/div/div/form/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04cd61bc-2b76-48af-8344-5c68b588fc30",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-41",
+      "targets": [
+        ["id=input-41", "id"],
+        ["css=#input-41", "css:finder"],
+        ["xpath=//input[@id='input-41']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div[2]/div/div/form/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "SUT Company"
+    }, {
+      "id": "fe50cc28-af0b-4bd5-a368-5d1a19ddd075",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-3 .v-icon",
+      "targets": [
+        ["css=.col-sm-3 .v-icon", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[2]/div/div/div/div/div/div[2]/div/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div[2]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fecb7bd2-54a0-47a8-8440-ff7c4a875b50",
+      "comment": "",
+      "command": "click",
+      "target": "id=วิสาหกิจขนาดใหญ่-list-item-99",
+      "targets": [
+        ["id=วิสาหกิจขนาดใหญ่-list-item-99", "id"],
+        ["css=#\\E27\\E34\\E2A\\E32\\E2B\\E01\\E34\\E08\\E02\\E19\\E32\\E14\\E43\\E2B\\E0D\\E48-list-item-99", "css:finder"],
+        ["xpath=//div[@id='วิสาหกิจขนาดใหญ่-list-item-99']", "xpath:attributes"],
+        ["xpath=//div[@id='list-48']/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48d34b3a-9537-4206-8763-94106d1bf503",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(2) .v-icon",
+      "targets": [
+        ["css=.col:nth-child(2) .v-icon", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[2]/div[2]/div/div/div/div/div[2]/div/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div[2]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d654656-a320-407c-8602-7982365a919c",
+      "comment": "",
+      "command": "click",
+      "target": "id=องค์กรธุรกิจ-list-item-104",
+      "targets": [
+        ["id=องค์กรธุรกิจ-list-item-104", "id"],
+        ["css=#\\E2D\\E07\\E04\\E4C\\E01\\E23\\E18\\E38\\E23\\E01\\E34\\E08-list-item-104", "css:finder"],
+        ["xpath=//div[@id='องค์กรธุรกิจ-list-item-104']", "xpath:attributes"],
+        ["xpath=//div[@id='list-57']/div[6]/div/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3101c323-5466-4b8c-944b-0132a8a8674a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(3) .v-icon",
+      "targets": [
+        ["css=.col:nth-child(3) .v-icon", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[2]/div[3]/div/div/div/div/div[2]/div/i", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/div[2]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fe77d63-3e8a-4b28-93da-cb5b29b647ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=กรุงเทพมหานคร-list-item-112",
+      "targets": [
+        ["id=กรุงเทพมหานคร-list-item-112", "id"],
+        ["css=#\\E01\\E23\\E38\\E07\\E40\\E17\\E1E\\E21\\E2B\\E32\\E19\\E04\\E23-list-item-112", "css:finder"],
+        ["xpath=//div[@id='กรุงเทพมหานคร-list-item-112']", "xpath:attributes"],
+        ["xpath=(//div[@id='list-66']/div/div/div)[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abb80c2a-d7f0-464f-925e-49b1bb0b7799",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-75",
+      "targets": [
+        ["id=input-75", "id"],
+        ["css=#input-75", "css:finder"],
+        ["xpath=//input[@id='input-75']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[3]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6a6cc58-a61b-42f3-933c-8b84c5491ff5",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-75",
+      "targets": [
+        ["id=input-75", "id"],
+        ["css=#input-75", "css:finder"],
+        ["xpath=//input[@id='input-75']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[3]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "sut@mail.com"
+    }, {
+      "id": "f5de65b9-c6b1-419d-805b-23a469bc92a5",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-82",
+      "targets": [
+        ["id=input-82", "id"],
+        ["css=#input-82", "css:finder"],
+        ["xpath=//input[@id='input-82']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[4]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92f778d3-6b4e-4dd7-8831-730874498f4f",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-82",
+      "targets": [
+        ["id=input-82", "id"],
+        ["css=#input-82", "css:finder"],
+        ["xpath=//input[@id='input-82']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[4]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1111111111"
+    }, {
+      "id": "c1621fd5-a63d-42d3-97a4-0a2bd77a0aa0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[4]/div[2]/div/div[2]/div",
+      "targets": [
+        ["css=.v-input--is-focused .v-input__slot", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[4]/div[2]/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81739160-2633-42e8-9ed2-de458db58866",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-88",
+      "targets": [
+        ["id=input-88", "id"],
+        ["css=#input-88", "css:finder"],
+        ["xpath=//input[@id='input-88']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[4]/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1111111111"
+    }, {
+      "id": "f6aaa68e-e0f3-4352-a2e7-696d04f5eadd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.black > .v-btn__content",
+      "targets": [
+        ["css=.black > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[3]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3eef3d2b-b8cf-469c-985d-7295d71c59d8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.v-alert__content",
+      "targets": [
+        ["css=.v-alert__content", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[4]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div[4]/div/div/div", "xpath:position"]
+      ],
+      "value": "บันทึกสำเร็จ¨"
+    }, {
+      "id": "91485b71-310b-47fb-a06f-2346f573d2c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.theme--light > .v-btn__content",
+      "targets": [
+        ["css=.theme--light > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[3]/div/div/button[2]/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2f0160b-46ab-4745-8293-fd09c8d38bfb",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-147",
+      "targets": [
+        ["id=input-147", "id"],
+        ["css=#input-147", "css:finder"],
+        ["xpath=//input[@id='input-147']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eac8b4fb-0947-41eb-9def-fe381cdf2533",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-147",
+      "targets": [
+        ["id=input-147", "id"],
+        ["css=#input-147", "css:finder"],
+        ["xpath=//input[@id='input-147']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "sut@mail.com"
+    }, {
+      "id": "c61f7faa-b59f-4527-9a98-28c459c9074d",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-152",
+      "targets": [
+        ["id=input-152", "id"],
+        ["css=#input-152", "css:finder"],
+        ["xpath=//input[@id='input-152']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[5]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6699a8b6-44b8-46c0-a4ae-d5720caa49f5",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.font-weight-black:nth-child(1) > .v-btn__content",
+      "targets": [
+        ["css=.font-weight-black:nth-child(1) > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[6]/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "647e6dcf-c2a4-493e-9a97-7c71fa7a9309",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-152",
+      "targets": [
+        ["id=input-152", "id"],
+        ["css=#input-152", "css:finder"],
+        ["xpath=//input[@id='input-152']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[5]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1111111111"
+    }, {
+      "id": "0d89dad5-b601-4985-8cc8-ce611d352d18",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-weight-black:nth-child(1) > .v-btn__content",
+      "targets": [
+        ["css=.font-weight-black:nth-child(1) > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[6]/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "45d7e17d-29c5-4892-abbb-5285610f6795",
+    "name": "Register Company Fail",
+    "commands": [{
+      "id": "2d78680f-1f0e-4f09-b2a5-bfda5d7c035f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/logincompany",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f68c94f-2cf4-4b06-bbf9-833561678853",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x849",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67ccd8a6-d93c-4597-9a70-be7e205941bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.font-weight-black:nth-child(2) > .v-btn__content",
+      "targets": [
+        ["css=.font-weight-black:nth-child(2) > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[6]/div/button[2]/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ebabbef-c7a6-44fa-9c06-544714c3ea9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-41",
+      "targets": [
+        ["id=input-41", "id"],
+        ["css=#input-41", "css:finder"],
+        ["xpath=//input[@id='input-41']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div[2]/div/div/form/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85a8d70a-bdda-4e80-92d7-db18bc61b501",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-41",
+      "targets": [
+        ["id=input-41", "id"],
+        ["css=#input-41", "css:finder"],
+        ["xpath=//input[@id='input-41']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main/div/div/aside/div[2]/div/div[2]/div/div/form/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "SUT Company"
+    }, {
+      "id": "23f7de20-496f-406b-a55a-8cb539b178e5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-3 .v-icon",
+      "targets": [
+        ["css=.col-sm-3 .v-icon", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[2]/div/div/div/div/div/div[2]/div/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div[2]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77fa5d35-2c67-44b4-8759-0bdd165ca52e",
+      "comment": "",
+      "command": "click",
+      "target": "id=วิสาหกิจขนาดใหญ่-list-item-99",
+      "targets": [
+        ["id=วิสาหกิจขนาดใหญ่-list-item-99", "id"],
+        ["css=#\\E27\\E34\\E2A\\E32\\E2B\\E01\\E34\\E08\\E02\\E19\\E32\\E14\\E43\\E2B\\E0D\\E48-list-item-99", "css:finder"],
+        ["xpath=//div[@id='วิสาหกิจขนาดใหญ่-list-item-99']", "xpath:attributes"],
+        ["xpath=//div[@id='list-48']/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57e842fd-2ab1-48e3-a130-2f7ad8d65057",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(2) .v-icon",
+      "targets": [
+        ["css=.col:nth-child(2) .v-icon", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[2]/div[2]/div/div/div/div/div[2]/div/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div[2]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "385af4d7-8e2d-46e4-a530-432f53040612",
+      "comment": "",
+      "command": "click",
+      "target": "id=องค์กรธุรกิจ-list-item-104",
+      "targets": [
+        ["id=องค์กรธุรกิจ-list-item-104", "id"],
+        ["css=#\\E2D\\E07\\E04\\E4C\\E01\\E23\\E18\\E38\\E23\\E01\\E34\\E08-list-item-104", "css:finder"],
+        ["xpath=//div[@id='องค์กรธุรกิจ-list-item-104']", "xpath:attributes"],
+        ["xpath=//div[@id='list-57']/div[6]/div/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ed3b16a-817f-4531-a064-dc932352be89",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col:nth-child(3) .v-icon",
+      "targets": [
+        ["css=.col:nth-child(3) .v-icon", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[2]/div[3]/div/div/div/div/div[2]/div/i", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/div[2]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cffd791-d135-41a6-afd1-f6131de8ce30",
+      "comment": "",
+      "command": "click",
+      "target": "id=กรุงเทพมหานคร-list-item-112",
+      "targets": [
+        ["id=กรุงเทพมหานคร-list-item-112", "id"],
+        ["css=#\\E01\\E23\\E38\\E07\\E40\\E17\\E1E\\E21\\E2B\\E32\\E19\\E04\\E23-list-item-112", "css:finder"],
+        ["xpath=//div[@id='กรุงเทพมหานคร-list-item-112']", "xpath:attributes"],
+        ["xpath=(//div[@id='list-66']/div/div/div)[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ec6178b-3ca0-4acd-81e7-b2071e90967d",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-75",
+      "targets": [
+        ["id=input-75", "id"],
+        ["css=#input-75", "css:finder"],
+        ["xpath=//input[@id='input-75']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[3]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6a7d44c-6742-413f-8a71-0d7763f5fb30",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-75",
+      "targets": [
+        ["id=input-75", "id"],
+        ["css=#input-75", "css:finder"],
+        ["xpath=//input[@id='input-75']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[3]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "sut@mail.com"
+    }, {
+      "id": "4cb994a5-9823-4cb9-ab5d-250bf44761d0",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-82",
+      "targets": [
+        ["id=input-82", "id"],
+        ["css=#input-82", "css:finder"],
+        ["xpath=//input[@id='input-82']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[4]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "293c3672-c39e-4486-b9f5-ae70e3631e57",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-82",
+      "targets": [
+        ["id=input-82", "id"],
+        ["css=#input-82", "css:finder"],
+        ["xpath=//input[@id='input-82']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[2]/div/div/form/div[4]/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1111111111"
+    }, {
+      "id": "056c691a-84db-4570-835a-d76b97598210",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grey > .v-btn__content",
+      "targets": [
+        ["css=.grey > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[3]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "27659455-c141-4155-a8e9-24f58e081cc6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.v-alert__content",
+      "targets": [
+        ["css=.v-alert__content", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/main/div/div/aside/div[2]/div/div[4]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div/div[4]/div/div/div", "xpath:position"]
+      ],
+      "value": "บันทึกไม่สำเร็จ¨"
+    }]
+  }],
+  "suites": [{
+    "id": "444173f3-f8bd-42b3-bd10-59d99ac51e52",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9b924d84-de26-432f-a0eb-fe002a879b39"]
+  }],
+  "urls": ["http://localhost:8080/logincompany"],
+  "plugins": []
+}
