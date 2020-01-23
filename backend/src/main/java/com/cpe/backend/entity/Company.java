@@ -36,7 +36,7 @@ public class Company {
     private @NonNull String name;
 
     @NotNull
-    @Size(min=10,max=30)
+    @Size(min=10,max=20)
     private @NonNull String password;
 
     @NotNull
