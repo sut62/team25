@@ -162,6 +162,9 @@
             </v-col>
           </v-row>
         </v-card>
+         <div v-if="alert === 'null'"></div>
+      <div v-else-if="alert === 'true'"><v-alert type ="succes">บันทึกสำเร็จ</v-alert></div>
+      <div v-else-if="alert === 'false'"><v-alert type ="error">บันทึกไม่สำเร็จ</v-alert></div>
       </v-container>
     </v-navigation-drawer>
   </v-card>
@@ -185,7 +188,8 @@ export default {
       addjobs: undefined,
       informations: [],
       positions: [],
-      genders: []
+      genders: [],
+      alert: "null"
     };
   },
   methods: {
@@ -235,7 +239,7 @@ export default {
         !this.addjob.education ||
         !this.addjob.introduction
       ) {
-        alert("ใส่ข้อมูลไม่ครบถ้วน");
+         this.alert = 'false';  
       } else {
         http
           .post(
@@ -257,13 +261,14 @@ export default {
           )
           .then(response => {
             console.log(response);
+            this.alert = 'true';  
             this.$router.push("/addjob");
           })
           .catch(e => {
             console.log(e);
           });
         this.submitted = true;
-        alert("บันทึกเรียบร้อย");
+         this.alert = 'false';  
       }
     },
     back() {
