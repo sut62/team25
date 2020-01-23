@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+import javax.validation.constraints.NotNull;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -21,6 +23,7 @@ public class PhoneType {
     @Column(name="PHONETYPE_ID",unique = true, nullable = true)
     private @NonNull Long id;
 
+    @NotNull
     private @NonNull String name;
 
     public void setName(String name){
