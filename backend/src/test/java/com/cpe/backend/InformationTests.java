@@ -78,7 +78,7 @@ public class InformationTests {
         Information information = new Information();
         information.setInformation_type("Website");
         information = informationRepository.saveAndFlush(information);
-        Optional<Information> found = informationRepository.findById(information.getInformation_id());
+        Optional<Information> found = informationRepository.findById(information.getId());
         assertEquals(information.getInformation_type(), found.get().getInformation_type());
     }
    
