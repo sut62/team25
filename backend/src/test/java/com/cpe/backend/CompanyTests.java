@@ -142,7 +142,7 @@ public class CompanyTests {
 
         
         ConstraintViolation<Company> v = result.iterator().next();
-        assertEquals("size must be between 10 and 30", v.getMessage());
+        assertEquals("size must be between 10 and 20", v.getMessage());
         assertEquals("password", v.getPropertyPath().toString());
     }
 
@@ -150,7 +150,7 @@ public class CompanyTests {
     void b6007553_testPasswordMaxSize() {
         Company c7 = new Company();
         c7.setName("SUT Company"); 
-        c7.setPassword("0123456789012345678901234567890");
+        c7.setPassword("012345678901234567890");
         c7.setEmail("sut@mail.com");
 
         Set<ConstraintViolation<Company>> result = validator.validate(c7);
@@ -160,7 +160,7 @@ public class CompanyTests {
 
         
         ConstraintViolation<Company> v = result.iterator().next();
-        assertEquals("size must be between 10 and 30", v.getMessage());
+        assertEquals("size must be between 10 and 20", v.getMessage());
         assertEquals("password", v.getPropertyPath().toString());
     }
 
