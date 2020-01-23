@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.FetchType;
 
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Pattern;
 
 import javax.persistence.SequenceGenerator;
@@ -31,16 +30,13 @@ public class Information {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Information_SEQ")
 
     @Column(name="Information_id",unique = true, nullable = true)
-    private @NonNull Long information_id;
+    private @NonNull Long id;
     
     @NotNull
     @Size(min=4, max=30)
     @Pattern(regexp = "[a-zA-Z]{1,50}$")
     @Column(name="Information_type")
     private String Information_type;
-    @OneToMany(fetch = FetchType.EAGER)
-	
-	private Set<Addjob> Information;
 
 	public void setName(String name){
         this.Information_type=name;
