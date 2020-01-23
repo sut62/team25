@@ -277,7 +277,21 @@ export default {
         });
     },
      saveUser() {
-       if ((this.password == this.repassword) && (this.password.length>=8 || this.repassword.length>=8)){
+
+     if (
+        !this.user.name ||
+        !this.user.email ||
+        !this.password ||
+        !this.repassword ||
+        !this.user.phone ||
+        !this.user.nameTypeId ||
+        !this.user.phoneTypeId ||
+        !this.user.genderId
+        ){
+        this.alert = 'false';
+        }
+
+      else if ((this.password == this.repassword) && (this.password.length>=8 || this.repassword.length>=8) && (this.user.phone.length>=9)){
       http
         .post(
           "/user/" +
@@ -300,13 +314,13 @@ export default {
         console.log(response);
         
          this.alert = 'true';
-        this.$router.push("/LoginUser");
          })
         .catch(e => {
         console.log(e);
         });
         this.submitted = true;
-      }else{
+      }
+        else{
       this.alert = 'false'; 
     }
         },
@@ -323,7 +337,7 @@ export default {
         });
     },
       back(){
-      this.$router.push("/");
+      this.$router.push("/LoginUser");
     },
     refreshList() {
       this.getNameTypes();
