@@ -7,7 +7,7 @@
     parmanent>
 
   <v-container>
-    <v-card class="mx-auto" max-width="350" color="#424242" :elevation="13" dark>
+    <v-card class="mx-auto" max-width="400" color="#424242" :elevation="13" dark>
     <v-row justify="center">
       <v-toolbar-title>
         <h1 class="font-weight-CONDENSED" dark>Job Post</h1>
@@ -155,12 +155,17 @@
 
       </v-card>
       <v-col cols="12">
+          <div v-if="alert === 'null'"></div>
+                      <div v-else-if="alert === 'true'"><v-alert type ="succes">บันทึกสำเร็จ</v-alert></div>
+                      <div v-else-if="alert === 'false'"><v-alert type ="error">บันทึกไม่สำเร็จ</v-alert></div>
           <v-btn  x-large
             color = 'grey'
             rounded
             style="margin-left: 77%;" 
             dark @click="back" ><v-icon left>mdi-arrow-left-circle-outline</v-icon>BACK</v-btn>   
       </v-col>
+
+
   </v-container>
   </v-navigation-drawer>
   </v-card>
@@ -188,7 +193,9 @@ export default {
         Other_details : "",
         company : localStorage.getItem('name'), 
         positions : [],
-        benefits : []
+        benefits : [],
+        alert: "null",
+        alert1: "null"
     };     
      var firstKey = localStorage.key(0); 
   console.log(firstKey);
@@ -242,7 +249,7 @@ export default {
       !this.jobPost.benefitId ||
       !this.jobPost.Other_details 
      ) {
-       alert("ใส่ข้อมูลไม่ครบถ้วน");
+       this.alert = 'false';
      
      }else{
       http
@@ -266,7 +273,7 @@ export default {
         
         });
         this.summitted = true;
-        alert("บันทึกเรียบร้อย");
+        this.alert = 'true';
     
      }   
   },
@@ -278,6 +285,7 @@ export default {
 
         this.jobPost.positionId = null;
         this.jobPost.benefitId = null;
+
     },
     refreshList() {
     
