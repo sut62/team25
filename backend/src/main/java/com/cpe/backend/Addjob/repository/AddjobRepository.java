@@ -1,6 +1,6 @@
 package com.cpe.backend.Addjob.repository;
 
-import com.cpe.backend.entity.Addjob.Addjob;
+import com.cpe.backend.Addjob.entity.Addjob;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
