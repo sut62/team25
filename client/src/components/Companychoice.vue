@@ -1,6 +1,6 @@
 <template>
 <v-card class = "mx-auto" height="100%" width="100%">
-    <v-navigation-drawer 
+    <v-navigation-drawer
     absolute
     src="https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     width="100%"
@@ -11,7 +11,7 @@
   <br>
   <br>
   <br>
-  <v-card 
+  <v-card
     max-width="700"
     class="mx-auto"
   >
@@ -22,17 +22,25 @@
    <br>
    <br>
    <br>
-      </v-row> 
+      </v-row>
         <v-row justify="center">
           <v-col >
             <v-row justify="center">
-              <v-btn style="width:180px;height:60px " :elevation="7" class="font-weight-bold" dark
+              <v-btn style="width:180px;height:60px " :elevation="12" class="font-weight-bold" dark
                 color="#000000"
-                @click="jobpost"><font text="regular-60sp" dark>Job Post</font>   
+                @click="jobpost"><font text="regular-60sp" dark>Job Post</font>
               </v-btn>
-            </v-row> 
+            </v-row>
+            <br>
+            <br>
+            <v-row justify="center">
+                          <v-btn style="width:180px;height:60px " :elevation="12" class="font-weight-bold" dark
+                            color="#000000"
+                            @click="jobpostinformation"><font text="regular-60sp" dark>JobPost Information</font>
+                          </v-btn>
+                        </v-row>
           </v-col>
-        </v-row>    
+        </v-row>
       <br>
       <br>
       <v-system-bar color="#424242"></v-system-bar>
@@ -51,6 +59,9 @@ export default {
     jobpost(){
     this.$router.push("/jobpost");
     },
+    jobpostinformation(){
+        this.$router.push("/jobpostinformation");
+        },
   }
 }
 </script>
