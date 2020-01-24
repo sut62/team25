@@ -70,7 +70,14 @@ export default new Router({
       path: "/jobpostinformation",
       component: JobPostInformation
     },
+    {
+      path: "/SearchUser",
+      component: SearchUser
+    },
+    {
+      path: "/Companyinformation",
+      component: CompanyInformation
+    },
     
-
   ]
 });
