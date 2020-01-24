@@ -2,11 +2,8 @@ package com.cpe.backend.RegisterUser.controller;
 
 import com.cpe.backend.RegisterUser.entity.NameType;
 import com.cpe.backend.RegisterUser.repository.NameTypeRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 
 

@@ -74,11 +74,9 @@ public class UserController {
     @PathVariable long gender_id,
     @PathVariable long phoneType_id) {
 
-
     NameType nameType = nameTypeRepository.findById(nameType_id);
     Gender gender = genderRepository.findById(gender_id);
     PhoneType phoneType = phoneTypeRepository.findById(phoneType_id);
-
 
     newUser.setNameType(nameType); 
     newUser.setName(name); 
