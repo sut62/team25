@@ -46,7 +46,7 @@ public class CompanyController {
     public Collection<Company> Companys() {
         return companyRepository.findAll().stream().collect(Collectors.toList());
     }
-    @PostMapping("/company/{name}/{email}/{password}/{size_id}/{type_id}/{province_id}")
+    @PostMapping("/company/{name}/{email}/{password}/{size_id}/{province_id}/{type_id}")
     public Company newCompany(Company newCompany,
    
     @PathVariable String name,
@@ -60,10 +60,10 @@ public class CompanyController {
     CompanyType type = companyTypeRepository.findById(type_id);
     Province province = provinceRepository.findById(province_id);
     
-    newCompany.setType(type);
-    newCompany.setSize(size);
-    newCompany.setProvince(province);
     newCompany.setName(name);
+    newCompany.setSize(size);
+    newCompany.setType(type);
+    newCompany.setProvince(province);
     newCompany.setEmail(email);
     newCompany.setPassword(password);
     
