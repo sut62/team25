@@ -1,4 +1,4 @@
-package com.cpe.backend.controller;
+package com.cpe.backend.RegisterCompany.controller;
 
 import com.cpe.backend.RegisterCompany.entity.Province;
 import com.cpe.backend.RegisterCompany.repository.ProvinceRepository;
