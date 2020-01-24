@@ -1,7 +1,7 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.User;
-import com.cpe.backend.repository.UserRepository;
+import com.cpe.backend.RegisterUser.entity.User;
+import com.cpe.backend.RegisterUser.repository.UserRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

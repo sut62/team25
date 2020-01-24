@@ -1,7 +1,7 @@
   package com.cpe.backend;
 
-import com.cpe.backend.entity.Addjob;
-import com.cpe.backend.repository.AddjobRepository;
+import com.cpe.backend.Addjob.entity.Addjob;
+import com.cpe.backend.Addjob.repository.AddjobRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,7 +44,7 @@ public class AddjobTests {
 
         addjob = addjobRepository.saveAndFlush(addjob);
 
-        Optional<Addjob> found = addjobRepository.findById(addjob.getId());
+        Optional<Addjob> found = addjobRepository.findById(addjob.getAddjob_id());
         assertEquals("Nanticha Boonkla", found.get().getName());
         assertEquals("hello World", found.get().getIntroduction());
         assertEquals("m6/6", found.get().getEducation());

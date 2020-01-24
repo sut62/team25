@@ -1,7 +1,7 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.JobPost;
-import com.cpe.backend.repository.JobPostRepository;
+import com.cpe.backend.JobPost.entity.JobPost;
+import com.cpe.backend.JobPost.repository.JobPostRepository;
 
 
 import org.junit.jupiter.api.Assertions;

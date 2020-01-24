@@ -1,7 +1,7 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.Gender;
-import com.cpe.backend.repository.GenderRepository;
+import com.cpe.backend.RegisterUser.entity.Gender;
+import com.cpe.backend.RegisterUser.repository.GenderRepository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

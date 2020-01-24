@@ -1,9 +1,9 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.Addjob;
-import com.cpe.backend.repository.AddjobRepository;
-import com.cpe.backend.entity.Information;
-import com.cpe.backend.repository.InformationRepository;
+import com.cpe.backend.Addjob.entity.Addjob;
+import com.cpe.backend.Addjob.repository.AddjobRepository;
+import com.cpe.backend.Addjob.entity.Information;
+import com.cpe.backend.Addjob.repository.InformationRepository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
