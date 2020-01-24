@@ -1,7 +1,7 @@
-package com.cpe.backend.controller;
+package com.cpe.backend.JobPost.controller;
 
-import com.cpe.backend.entity.Position;
-import com.cpe.backend.repository.PositionRepository;
+import com.cpe.backend.JobPost.entity.Position;
+import com.cpe.backend.JobPost.repository.PositionRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

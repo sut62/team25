@@ -1,4 +1,4 @@
-package com.cpe.backend.controller;
+package com.cpe.backend.JobPost.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,15 +20,15 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.net.URLDecoder;
 
-import com.cpe.backend.entity.Company;
-import com.cpe.backend.entity.Position;
-import com.cpe.backend.entity.JobPost;
-import com.cpe.backend.entity.Benefit;
+import com.cpe.backend.JobPost.entity.Company;
+import com.cpe.backend.JobPost.entity.Position;
+import com.cpe.backend.JobPost.entity.JobPost;
+import com.cpe.backend.JobPost.entity.Benefit;
 
-import com.cpe.backend.repository.CompanyRepository;
-import com.cpe.backend.repository.JobPostRepository;
-import com.cpe.backend.repository.PositionRepository;
-import com.cpe.backend.repository.BenefitRepository;
+import com.cpe.backend.JobPost.repository.CompanyRepository;
+import com.cpe.backend.JobPost.repository.JobPostRepository;
+import com.cpe.backend.JobPost.repository.PositionRepository;
+import com.cpe.backend.JobPost.repository.BenefitRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
