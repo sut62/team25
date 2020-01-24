@@ -20,12 +20,12 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.net.URLDecoder;
 
-import com.cpe.backend.JobPost.entity.Company;
+import com.cpe.backend.RegisterCompany.entity.Company;
 import com.cpe.backend.JobPost.entity.Position;
 import com.cpe.backend.JobPost.entity.JobPost;
 import com.cpe.backend.JobPost.entity.Benefit;
 
-import com.cpe.backend.JobPost.repository.CompanyRepository;
+import com.cpe.backend.RegisterCompany.repository.CompanyRepository;
 import com.cpe.backend.JobPost.repository.JobPostRepository;
 import com.cpe.backend.JobPost.repository.PositionRepository;
 import com.cpe.backend.JobPost.repository.BenefitRepository;

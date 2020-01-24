@@ -1,23 +1,13 @@
 package com.cpe.backend.JobPost.entity;
 
 import lombok.*;
-
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.FetchType;
-
-import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.Pattern;
-
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-
 import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -37,7 +27,6 @@ public class Position {
     @Column(name="name")
     private String name;
    
-
     public void setName(String name) {
         this.name=name;
 	}
