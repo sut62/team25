@@ -1,7 +1,7 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.PhoneType;
-import com.cpe.backend.repository.PhoneTypeRepository;
+import com.cpe.backend.RegisterUser.entity.PhoneType;
+import com.cpe.backend.RegisterUser.repository.PhoneTypeRepository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

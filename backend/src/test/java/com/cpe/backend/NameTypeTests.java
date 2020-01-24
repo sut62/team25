@@ -1,7 +1,7 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.NameType;
-import com.cpe.backend.repository.NameTypeRepository;
+import com.cpe.backend.RegisterUser.entity.NameType;
+import com.cpe.backend.RegisterUser.repository.NameTypeRepository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
