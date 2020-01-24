@@ -156,9 +156,11 @@
                       :elevation="7"
                       >BACK</v-btn
                     >
+                    
                   </v-col>
                 </v-row>
               </v-form>
+           
             </v-col>
           </v-row>
         </v-card>
@@ -272,7 +274,7 @@ export default {
       }
     },
     back() {
-      this.$router.push("/loginuser");
+      this.$router.push("/userchoice");
     },
     refreshList() {
       this.getInformations();
