@@ -67,7 +67,7 @@ export default new Router({
       component: ShowInfo 
     },
     {
-      path: "/JobPostInformation",
+      path: "/jobpostinformation",
       component: JobPostInformation
     },
     
