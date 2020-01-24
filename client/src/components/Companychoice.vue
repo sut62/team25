@@ -21,7 +21,6 @@
    <v-toolbar-title ><h1>Welcome</h1></v-toolbar-title>
    <br>
    <br>
-   <br>
       </v-row>
         <v-row justify="center">
           <v-col >
@@ -32,13 +31,19 @@
               </v-btn>
             </v-row>
             <br>
+            <v-row justify="center">
+              <v-btn style="width:230px;height:60px " :elevation="12" class="font-weight-bold" dark
+                color="#000000"
+                @click="jobpostinformation"><font text="regular-60sp" dark>JobPost Information</font>
+              </v-btn>
+            </v-row>
             <br>
             <v-row justify="center">
-                          <v-btn style="width:180px;height:60px " :elevation="12" class="font-weight-bold" dark
-                            color="#000000"
-                            @click="jobpostinformation"><font text="regular-60sp" dark>JobPost Information</font>
-                          </v-btn>
-                        </v-row>
+              <v-btn style="width:230px;height:60px " :elevation="12" class="font-weight-bold" dark
+                color="#000000"
+                @click="companyinformation"><font text="regular-60sp" dark>Company Information</font>
+              </v-btn>
+            </v-row>
           </v-col>
         </v-row>
       <br>
@@ -57,11 +62,14 @@
 export default {
  methods: {
     jobpost(){
-    this.$router.push("/jobpost");
+      this.$router.push("/jobpost");
     },
     jobpostinformation(){
-        this.$router.push("/jobpostinformation");
-        },
+      this.$router.push("/jobpostinformation");
+    },
+    companyinformation(){
+      this.$router.push("/Companyinformation");
+    },
   }
 }
 </script>
