@@ -9,6 +9,10 @@ import LoginCompany from "../components/LoginCompany";
 import RegisterCompany from "../components/RegisterCompany";
 import Companychoice from "../components/Companychoice";
 import JobPost from "../components/JobPost";
+import ShowInfo from "../components/ShowInfo";
+import SearchUser from "../components/SearchUser";
+import CompanyInformation from "../components/CompanyInformation";
+import JobPostInformation from "../components/JobPostInformation";
 
 Vue.use(Router);
 
@@ -57,7 +61,16 @@ export default new Router({
     {
       path: "/jobpost",
       component: JobPost 
-    }
+    },
+    {
+      path: "/showinfo",
+      component: ShowInfo 
+    },
+    {
+      path: "/JobPostInformation",
+      component: JobPostInformation
+    },
+    
 
   ]
 });
