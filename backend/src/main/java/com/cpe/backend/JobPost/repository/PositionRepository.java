@@ -1,6 +1,6 @@
-package com.cpe.backend.repository;
+package com.cpe.backend.JobPost.repository;
 
-import com.cpe.backend.entity.Position;
+import com.cpe.backend.JobPost.entity.Position;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

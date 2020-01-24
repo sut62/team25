@@ -1,4 +1,4 @@
-package com.cpe.backend.entity;
+package com.cpe.backend.JobPost.entity;
 
 import lombok.*;
 import javax.persistence.Id;

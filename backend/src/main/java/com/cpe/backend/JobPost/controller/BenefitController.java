@@ -1,4 +1,4 @@
-package com.cpe.backend.controller;
+package com.cpe.backend.JobPost.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import com.cpe.backend.entity.Benefit;
-import com.cpe.backend.repository.BenefitRepository;
+import com.cpe.backend.JobPost.entity.Benefit;
+import com.cpe.backend.JobPost.repository.BenefitRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 

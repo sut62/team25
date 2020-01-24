@@ -1,4 +1,4 @@
-package com.cpe.backend.entity;
+package com.cpe.backend.JobPost.entity;
 
 import lombok.*;
 
@@ -36,9 +36,7 @@ public class Position {
     @NotNull
     @Column(name="name")
     private String name;
-    @OneToMany(fetch = FetchType.EAGER)
-
-    private Set<JobPost> Position;
+   
 
     public void setName(String name) {
         this.name=name;
