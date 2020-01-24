@@ -1,7 +1,7 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.Province;
-import com.cpe.backend.repository.ProvinceRepository;
+import com.cpe.backend.RegisterCompany.entity.Province;
+import com.cpe.backend.RegisterCompany.repository.ProvinceRepository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

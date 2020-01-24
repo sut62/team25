@@ -1,7 +1,7 @@
 package com.cpe.backend;
 
-import com.cpe.backend.entity.CompanyType;
-import com.cpe.backend.repository.CompanyTypeRepository;
+import com.cpe.backend.RegisterCompany.entity.CompanyType;
+import com.cpe.backend.RegisterCompany.repository.CompanyTypeRepository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
