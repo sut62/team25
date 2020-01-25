@@ -7,8 +7,13 @@
         <br />
         <h1 class="display-2 font-weight-bold mb-3 color=#000000 ">Welcome to Search User</h1>
       </v-flex>
-    </v-layout></br></br>
+    </v-layout>
 
+    <v-row justify="center">
+    <div v-if="alert === 'null'"></div>
+      <div v-else-if="alert === 'true'"><v-alert type ="succes">พบข้อมูล</v-alert></div>
+      <div v-else-if="alert === 'false'"><v-alert type ="error">ไม่พบข้อมูล</v-alert></div>
+      </v-row>
    <v-row justify="center">
       
         <v-form v-model="valid" ref="form">
@@ -30,7 +35,7 @@
 
               </v-row>
             </v-form>
-    </v-row></br></br>
+    </v-row></br>
 
               
       <v-row justify="center">
@@ -134,7 +139,9 @@ export default {
       userEmail: "",
       userNameType: "",
       userGender: "",
-      userPhoneType: ""
+      userPhoneType: "",
+      alert: "null",
+      alert1: "null"
     };
   },
   methods: {
@@ -146,6 +153,7 @@ export default {
         .then(response => {
           console.log(response);
           if (response.data != null) {
+            this.alert = 'true';
             this.userName = response.data.name;
             this.userPhone = response.data.phone;
             this.userEmail = response.data.email;
@@ -154,6 +162,7 @@ export default {
             this.userGender = response.data.gender.name;
             this.userCheck = response.status;
           } else {
+            this.alert = 'false';
             this.clear()
           }          
         })
