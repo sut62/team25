@@ -1,4 +1,4 @@
-package com.cpe.backend.Addjob.controller;
+package com.okta.springbootvue.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,15 +20,16 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.net.URLDecoder;
 
-import com.cpe.backend.Addjob.entity.Addjob;
-import com.cpe.backend.RegisterUser.entity.Gender;
-import com.cpe.backend.Addjob.entity.Information;
-import com.cpe.backend.JobPost.entity.Position;
+import com.okta.springbootvue.entity.Addjob;
+import com.okta.springbootvue.entity.Information;
+import com.okta.springbootvue.entity.User;
+import com.okta.springbootvue.entity.JobPost;
 
-import com.cpe.backend.Addjob.repository.AddjobRepository;
-import com.cpe.backend.Addjob.repository.InformationRepository;
-import com.cpe.backend.RegisterUser.repository.GenderRepository;
-import com.cpe.backend.JobPost.repository.PositionRepository;
+import com.okta.springbootvue.repository.AddjobRepository;
+import com.okta.springbootvue.repository.InformationRepository;
+import com.okta.springbootvue.repository.UserRepository;
+import com.okta.springbootvue.repository.JobPostRepository;
+
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -40,9 +41,10 @@ public class AddjobController {
     @Autowired
     private InformationRepository informationRepository;
     @Autowired
-    private GenderRepository genderRepository;
+    private UserRepository userRepository;
     @Autowired
-    private PositionRepository positionRepository;
+    private JobPostRepository jobPostRepository;
+    
     
     AddjobController(AddjobRepository addjobRepository) {
         this.addjobRepository = addjobRepository;
@@ -53,26 +55,26 @@ public class AddjobController {
         return addjobRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @PostMapping("/addjob/{name}/{gender_id}/{phone}/{education}/{position_id}/{information_id}/{introduction}")
+    @PostMapping("/addjob/{name}/{u}/{phone}/{education}/{j}/{i}/{introduction}")
     public Addjob newAddjob(Addjob newAddjob, 
     @PathVariable String name,
-    @PathVariable long gender_id,
+    @PathVariable long u,
     @PathVariable String phone,
     @PathVariable String education,
-    @PathVariable long position_id,
-    @PathVariable long information_id,
+    @PathVariable long j,
+    @PathVariable long i,
     @PathVariable String introduction)
 
     {
-        Information information = informationRepository.findById(information_id);
-        Gender gender = genderRepository.findById(gender_id);
-        Position position = positionRepository.findById(position_id);
+        Information information = informationRepository.findById(i);
+        User user = userRepository.findById(u);
+        JobPost jobPost = jobPostRepository.findById(j);
        
         newAddjob.setName(name);
-        newAddjob.setGender(gender);
+        newAddjob.setUser(user);
         newAddjob.setPhone(phone);
         newAddjob.setEducation(education);
-        newAddjob.setPosition(position);
+        newAddjob.setJobPost(jobPost);
         newAddjob.setInformation(information);
         newAddjob.setIntroduction(introduction);
         
