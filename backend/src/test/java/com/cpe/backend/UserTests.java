@@ -79,6 +79,35 @@ public class UserTests {
         assertEquals("email", v.getPropertyPath().toString());
     }
 
+        @Test
+    void b6026493_testPasswordMinSize() {
+        User user = new User();
+        user.setName("Nuttawan Pluemsoontorn");
+        user.setEmail("amp@gmail.com");
+        user.setPassword("1234567");
+        user.setPhone("123456789");
+        Set<ConstraintViolation<User>> result = validator.validate(user);
+        assertEquals(1, result.size()); 
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("size must be between 8 and 20", v.getMessage());
+        assertEquals("password", v.getPropertyPath().toString());
+    }
+
+    @Test
+    void b6026493_testPasswordMaxSize() {
+        User user = new User();
+        user.setName("Nuttawan Pluemsoontorn");
+        user.setEmail("amp@gmail.com");
+        user.setPassword("123456789012345678901");
+        user.setPhone("1234567890");
+        Set<ConstraintViolation<User>> result = validator.validate(user);
+        assertEquals(1, result.size());
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("size must be between 8 and 20", v.getMessage());
+        assertEquals("password", v.getPropertyPath().toString());
+    }
+
+
     @Test
     void b6026493_testPhoneMinSize() {
         User user = new User();
