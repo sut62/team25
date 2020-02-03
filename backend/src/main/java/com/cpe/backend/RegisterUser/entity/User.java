@@ -44,6 +44,7 @@ public class User {
     private @NonNull String email;
 
     @NotNull
+    @Size(min=8,max=20)
     private @NonNull String password;
 
     @NotNull
