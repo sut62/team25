@@ -48,16 +48,19 @@ public class Addjob {
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Gender.class)
     @JoinColumn(name = "GENDER_ID", insertable = true)
     @JsonManagedReference
+    @NotNull
     private  Gender gender;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Information.class)
     @JoinColumn(name = "Information_id", insertable = true)
     @JsonManagedReference
+    @NotNull
     private Information information;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Position.class)
     @JoinColumn(name = "POSITION_ID", insertable = true)
     @JsonManagedReference
+    @NotNull
     private  Position position;
 
 	public void setName(String name) {
