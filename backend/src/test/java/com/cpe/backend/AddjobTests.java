@@ -40,7 +40,7 @@ public class AddjobTests {
         addjob.setName("Nanticha Boonkla");
         addjob.setIntroduction("hello World");
         addjob.setEducation("m6/6");
-        addjob.setPhone("0123456789");
+        addjob.setPhone("0952350700");
 
         addjob = addjobRepository.saveAndFlush(addjob);
 
@@ -48,7 +48,7 @@ public class AddjobTests {
         assertEquals("Nanticha Boonkla", found.get().getName());
         assertEquals("hello World", found.get().getIntroduction());
         assertEquals("m6/6", found.get().getEducation());
-        assertEquals("0123456789", found.get().getPhone());
+        assertEquals("0952350700", found.get().getPhone());
     }
     @Test
     void b6007409_testNameMustNotBeNull() {
@@ -57,7 +57,7 @@ public class AddjobTests {
         addjob.setName(null);
         addjob.setIntroduction("hello World");
         addjob.setEducation("m6/6");
-        addjob.setPhone("0123456789");
+        addjob.setPhone("0952350700");
 
         Set<ConstraintViolation<Addjob>> result = validator.validate(addjob);
        
@@ -66,6 +66,24 @@ public class AddjobTests {
        ConstraintViolation<Addjob> v = result.iterator().next();
        assertEquals("must not be null", v.getMessage());
        assertEquals("name", v.getPropertyPath().toString());
+    }
+
+    @Test
+    void b6007409_testPhoneMustNotBeNull() {
+        Addjob addjob = new Addjob();
+       
+        addjob.setName("Nanticha Boonkla");
+        addjob.setIntroduction("hello World");
+        addjob.setEducation("m6/6");
+        addjob.setPhone(null);
+
+        Set<ConstraintViolation<Addjob>> result = validator.validate(addjob);
+       
+       assertEquals(1, result.size());
+
+       ConstraintViolation<Addjob> v = result.iterator().next();
+       assertEquals("must not be null", v.getMessage());
+       assertEquals("phone", v.getPropertyPath().toString());
     }
 
     @Test
@@ -127,7 +145,7 @@ public class AddjobTests {
         addjob.setName("Nanticha Boonkla");
         addjob.setIntroduction(null);
         addjob.setEducation("m6/6");
-        addjob.setPhone("0123456789");
+        addjob.setPhone("0952350700");
 
         Set<ConstraintViolation<Addjob>> result = validator.validate(addjob);
        
@@ -145,7 +163,7 @@ public class AddjobTests {
         addjob.setName("Nanticha Boonkla");
         addjob.setIntroduction("helloooo");
         addjob.setEducation(null);
-        addjob.setPhone("0123456789");
+        addjob.setPhone("0952350700");
 
         Set<ConstraintViolation<Addjob>> result = validator.validate(addjob);
        
@@ -156,5 +174,4 @@ public class AddjobTests {
        assertEquals("education", v.getPropertyPath().toString());
     }
 
- 
 }
