@@ -66,6 +66,48 @@ public class UserTests {
     }
 
     @Test
+    void b6026493_testUserEmailMustNotBeNull() {
+        User user = new User();
+        user.setName("Nuttawan Pluemsoontorn");
+        user.setEmail(null);
+        user.setPassword("12345678");
+        user.setPhone("0123456789");
+        Set<ConstraintViolation<User>> result = validator.validate(user);
+        assertEquals(1, result.size());
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("must not be null", v.getMessage());
+        assertEquals("email", v.getPropertyPath().toString());
+    }
+
+    @Test
+    void b6026493_testUserPasswordMustNotBeNull() {
+        User user = new User();
+        user.setName("Nuttawan Pluemsoontorn");
+        user.setEmail("amp@gmail.com");
+        user.setPassword(null);
+        user.setPhone("0123456789");
+        Set<ConstraintViolation<User>> result = validator.validate(user);
+        assertEquals(1, result.size());
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("must not be null", v.getMessage());
+        assertEquals("password", v.getPropertyPath().toString());
+    }
+
+    @Test
+    void b6026493_testUserPhoneMustNotBeNull() {
+        User user = new User();
+        user.setName("Nuttawan Pluemsoontorn");
+        user.setEmail("amp@gmail.com");
+        user.setPassword("12345678");
+        user.setPhone(null);
+        Set<ConstraintViolation<User>> result = validator.validate(user);
+        assertEquals(1, result.size());
+        ConstraintViolation<User> v = result.iterator().next();
+        assertEquals("must not be null", v.getMessage());
+        assertEquals("phone", v.getPropertyPath().toString());
+    }
+
+    @Test
     void b6026493_testUserEmailMustHaveAddress() {
         User user = new User();
         user.setName("Nuttawan Pluemsoontorn");
