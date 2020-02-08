@@ -8,7 +8,7 @@
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Company Information Test</td></tr>
+<tr><td rowspan="1" colspan="3">Company Information Pass</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:8080/LoginCompany<datalist><option>http://localhost:8080/LoginCompany</option></datalist></td><td></td>
@@ -62,6 +62,18 @@
 <tr><td>click</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div[3]/button/span/font<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div[3]/button/span/font</option><option>//div[3]/button/span/font</option></datalist></td><td></td>
 </tr>
 <tr><td>assertText</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div/div/div/h1<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div/div/div/h1</option><option>//h1</option><option>css=h1.display-1.font-weight-bold</option></datalist></td><td>Company Information</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Company Information Fail</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/Companychoice<datalist><option>http://localhost:8080/Companychoice</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div[3]/button/span/font<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div[3]/button/span/font</option><option>//div[3]/button/span/font</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div[2]/div/div/div/table/tbody/tr/td<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div[2]/div/div/div/table/tbody/tr/td</option><option>//td</option><option>css=td</option></datalist></td><td>Loading items...</td>
 </tr>
 </tbody></table>
 </body>
