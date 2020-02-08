@@ -164,6 +164,44 @@ public class CompanyTests {
         assertEquals("password", v.getPropertyPath().toString());
     }
 
+    @Test
+    void b6007553_testPasswordNull() {
+        Company c2 = new Company();
+        c2.setName("SUT Company");
+        c2.setPassword(null);
+        c2.setEmail("sut@mail.com");
+
+
+        Set<ConstraintViolation<Company>> result = validator.validate(c2);
+
+        
+        assertEquals(1, result.size());
+
+       
+        ConstraintViolation<Company> v = result.iterator().next();
+        assertEquals("must not be null", v.getMessage());
+        assertEquals("password", v.getPropertyPath().toString());
+    }
+
+    @Test
+    void b6007553_testEmailNull() {
+        Company c2 = new Company();
+        c2.setName("SUT Company");
+        c2.setPassword("0123456789");
+        c2.setEmail(null);
+
+
+        Set<ConstraintViolation<Company>> result = validator.validate(c2);
+
+        
+        assertEquals(1, result.size());
+
+       
+        ConstraintViolation<Company> v = result.iterator().next();
+        assertEquals("must not be null", v.getMessage());
+        assertEquals("email", v.getPropertyPath().toString());
+    }
+
 }
 
 
