@@ -33,7 +33,7 @@
               ></v-data-table>
               <v-col cols="3">
                 <br/>
-                <v-btn x-medium color="#212121" style="margin-left: 400%;" dark @click="back">Back</v-btn>
+                <v-btn x-medium color="#212121" style="margin-left: 380%;" dark @click="back"><v-icon left>mdi-arrow-left-circle-outline</v-icon>Back</v-btn>
               </v-col>
             </v-col>
           </v-row>
@@ -58,7 +58,6 @@ export default {
           sortable: false,
           value: "Company_id"
         },
-        { text: "ID", value: "id" },
         { text: "Company Name", value: "name" },
         { text: "Company Size", value: "size.name" },
         { text: "Company Type", value: "type.name" },
