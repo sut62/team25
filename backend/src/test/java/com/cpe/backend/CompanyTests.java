@@ -186,7 +186,7 @@ public class CompanyTests {
     @Test
     void b6007553_testEmailNull() {
         Company c2 = new Company();
-        c2.setName("SUT Company");
+        c2.setName("SUTCompany");
         c2.setPassword("0123456789");
         c2.setEmail(null);
 
