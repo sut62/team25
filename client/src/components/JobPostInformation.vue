@@ -64,7 +64,7 @@ export default {
         { text: "Company", value: "company.name" },
         { text: "Position", value: "position.name" },
         { text: "Educationlevel", value: "educationlevel" },
-        { text: "Salary", value: "salary" },
+        { text: "Salarydetails", value: "salarydetails" },
         { text: "Benefit", value: "benefit.name" },
         { text: "Other_details", value: "other_details" },
       ],
