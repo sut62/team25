@@ -39,7 +39,6 @@ public class Addjob {
     private @NonNull String phone;
 
     @NotNull
-    @Size(min=6,max=50)
     private @NonNull String introduction;
 
     @NotNull
