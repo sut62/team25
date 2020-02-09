@@ -33,14 +33,16 @@ public class JobPost {
     private @NonNull Long id;
 
     @NotNull
-    @Size(min=1, max=20)
-    private String salary;
+    @Size(min=4, max=20)
+    private String salarydetails;
 
-    @NonNull
+    @NotNull
     @Pattern(regexp = "^[.A-Za-z0-9ก-ฮะ-๙]*$")
+    @Size(min=3, max=20)
     private String educationlevel;
 
-    @NonNull
+    @NotNull
+    @Pattern(regexp = "^[.A-Za-z0-9ก-ฮะ-๙]*$")
     private String Other_details;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Position.class)
@@ -78,7 +80,7 @@ public class JobPost {
                 this.educationlevel=educationlevel;
 	}
 
-	public void setSalary(String salary) {
-                this.salary=salary;
+	public void setSalarydetails(String salarydetails) {
+                this.salarydetails=salarydetails;
         }
 }

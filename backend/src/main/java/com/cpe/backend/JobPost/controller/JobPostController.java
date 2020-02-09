@@ -53,11 +53,11 @@ public class JobPostController {
         return jobPostRepository.findAll().stream().collect(Collectors.toList());
     }
 
-    @PostMapping("/jobPost/{company_id}/{position_id}/{benefit_id}/{educationlevel}/{salary}/{Other_details}")
+    @PostMapping("/jobPost/{company_id}/{position_id}/{benefit_id}/{educationlevel}/{salarydetails}/{Other_details}")
     public JobPost newJobPost(JobPost newJobPost,
     @PathVariable String Other_details,
     @PathVariable String educationlevel,
-    @PathVariable String salary,
+    @PathVariable String salarydetails,
     @PathVariable long company_id,
     @PathVariable long position_id,
     @PathVariable long benefit_id){
@@ -69,7 +69,7 @@ public class JobPostController {
   
     newJobPost.setOther(Other_details);
     newJobPost.setEducationlevel(educationlevel);
-    newJobPost.setSalary(salary);
+    newJobPost.setSalarydetails(salarydetails);
     newJobPost.setCompany(company);
     newJobPost.setBenefit(benefit);
     newJobPost.setPosition(position);
