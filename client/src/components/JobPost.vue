@@ -87,8 +87,8 @@
                 solo
                 loading color="blue accent-1"
                 label="Salary"
-                v-model="jobPost.salary"
-                :items="salarys"
+                v-model="jobPost.salarydetails"
+                :items="salarydetails"
                 :rules="[(v) => !!v || 'This field is required']"
                 required
                 clearable
@@ -182,13 +182,13 @@ export default {
       jobPost: {
         positionId: "",
         benefitId: "",
-        salary : "",
+        salarydetails : "",
         educationlevel : "",
         Other_details : "",
         company : "",
       },
      
-        salarys : "",
+        salarydetails : "",
         educationlevels : "",
         Other_details : "",
         company : localStorage.getItem('name'), 
@@ -245,7 +245,7 @@ export default {
       !this.company ||
       !this.jobPost.positionId ||
       !this.jobPost.educationlevel || 
-      !this.jobPost.salary ||
+      !this.jobPost.salarydetails ||
       !this.jobPost.benefitId ||
       !this.jobPost.Other_details 
      ) {
@@ -258,7 +258,7 @@ export default {
            "/" + this.jobPost.positionId + 
            "/" + this.jobPost.benefitId + 
            "/" + this.jobPost.educationlevel +
-            "/" + this.jobPost.salary  + 
+            "/" + this.jobPost.salarydetails  + 
             "/" + this.jobPost.Other_details,
             this.jobPost
           
@@ -279,7 +279,7 @@ export default {
   },
     clear() {
      
-        this.jobPost.salary = "";
+        this.jobPost.salarydetails = "";
         this.jobPost.educationlevel = "";
         this.jobPost.Other_details = "";
 
