@@ -88,7 +88,7 @@
                 </v-col>
             </v-row>
 
-            <!-- email -->
+            
           
             <v-row style="height: 95px;" justify="center">
               <v-col cols="3" sm="4">
@@ -111,7 +111,7 @@
 
         
 
-        <!-- password -->
+    
             <v-row style="height: 120px;" justify="center">
               <v-col cols="3" sm="5">
                 <v-text-field
@@ -134,7 +134,7 @@
                 ></v-text-field>
               </v-col>
 
-        <!-- ยืมยันpassword -->
+      
               <v-col cols="3" sm="5">
                 <v-text-field
                   color="#000000"
@@ -172,10 +172,13 @@
                 </div>
               </v-col>
             </v-row>
-
+  
+     <br>
+     <v-row justify="center">
       <div v-if="alert === 'null'"></div>
-      <div v-else-if="alert === 'true'"><v-alert type ="succes">บันทึกสำเร็จ</v-alert></div>
+      <div v-else-if="alert === 'true'"><v-alert type ="success">บันทึกสำเร็จ</v-alert></div>
       <div v-else-if="alert === 'false'"><v-alert type ="error">บันทึกไม่สำเร็จ</v-alert></div>
+    </v-row>
 
   </v-container>
   </v-navigation-drawer>
@@ -194,7 +197,7 @@ export default {
         name: "",
         email: "",
         password: "",
-        companyTypetId: "",
+        companyTypeId: "",
         provinceId: "",
         companySizeId: ""
       },
@@ -227,7 +230,7 @@ export default {
     };
   },
   methods: {
-    /* eslint-disable no-console */
+    
     getTypes() {
       http
         .get("/companyType")
@@ -330,7 +333,7 @@ export default {
       this.getCompanySizes();
       this.getCompanys();
     }
-    /* eslint-enable no-console */
+  
   },
   mounted() {
     this.getTypes();

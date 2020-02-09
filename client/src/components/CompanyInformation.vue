@@ -1,90 +1,176 @@
 <template>
-  <v-card class="mx-auto" height="100%" width="100%">
-    <v-navigation-drawer
-      absolute
-      dark
-      src="https://images.unsplash.com/photo-1579388642426-fa20f2f6f967?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
-      width="100%"
-      permanent
-    >
-      <br />
-      <v-card class="mx-auto" max-width="1000" color="#757575">
-        <v-system-bar color="#E0E0E0"></v-system-bar>
-        <v-system-bar color="#E0E0E0"></v-system-bar>
-        <v-container>
-        <v-card class="mx-auto" max-width="420" color="#424242" :elevation="7" dark>
-          <v-row justify="center">
-              <br><br>
-              <v-toolbar-title>
-                <h1 class="display-1 font-weight-bold" font-weight-regular >Company Information</h1>
-              </v-toolbar-title>
-          </v-row>
-        </v-card>
+<v-card   color="#F0FFFF" :elevation="13" >
+  <v-container>
 
-          <v-row justify="center">
-            <v-col cols="15" >
-              <v-data-table
-                :headers="headers"
-                :items="items"
-                :items-per-page="5"
-                loading
-                class="elevation-1"
-                color=""
-              ></v-data-table>
-              <v-col cols="3">
-                <br/>
-                <v-btn x-medium color="#212121" style="margin-left: 380%;" dark @click="back"><v-icon left>mdi-arrow-left-circle-outline</v-icon>Back</v-btn>
-              </v-col>
-            </v-col>
-          </v-row>
-        </v-container>
-
+    <v-layout text-center wrap>
+      <v-flex mb-4>
         <br />
-        <v-system-bar color="#E0E0E0"></v-system-bar>
-        <v-system-bar color="#E0E0E0"></v-system-bar>
-      </v-card>
-    </v-navigation-drawer>
-  </v-card>
+        <h1 class="display-2 font-weight-bold mb-3 color=#000000 ">Company Information</h1>
+      </v-flex>
+    </v-layout>
+
+    <v-row justify="center">
+      <div v-if="alert === 'null'"></div>
+      <div v-else-if="alert === 'true'"><v-alert type ="success">พบข้อมูล</v-alert></div>
+      <div v-else-if="alert === 'false'"><v-alert type ="error">ไม่พบข้อมูล</v-alert></div>
+    </v-row>
+      
+    <v-row justify="center">
+        <v-form v-model="valid" ref="form">
+          <v-row justify="center">
+            
+              <v-text-field
+                outlined
+                class="font-weight-bold"
+                color="#1E88E5"
+                label="Company ID"
+                v-model="company.companyId"
+                :rules="[(v) => !!v || 'Item is required']"
+                required
+              ></v-text-field>
+
+              &nbsp;&nbsp;&nbsp;&nbsp;
+
+              <v-btn @click="findCompany" depressed large rounded color="primary"><v-icon dark left>mdi-file-document-box-search-outline</v-icon>Search</v-btn>
+
+          </v-row>
+        </v-form>
+    </v-row>
+
+              
+       <v-row justify="center">
+          <p v-if="companyCheck != ''"><v-text-field
+            class="font-weight-bold"
+            outlined    
+            color="#1E88E5"
+            v-model="companyName"
+            label="Name"
+            readonly
+            prepend-icon="mdi-domain"       
+          ></v-text-field></p>
+        </v-row>
+
+        <v-row justify="center">
+            <p v-if="companyCheck != ''"><v-text-field
+                class="font-weight-bold "
+                outlined
+                color="#1E88E5"
+                v-model="companySize"
+                label="CompanySize"
+                readonly            
+            ></v-text-field></p>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <p v-if="companyCheck != ''"><v-text-field
+                class="font-weight-bold "
+                outlined
+                color="#1E88E5"
+                v-model="companyType"
+                label="CompanyType"
+                readonly            
+            ></v-text-field></p>
+              
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <p v-if="companyCheck != ''"><v-text-field
+                class="font-weight-bold "
+                outlined
+                color="#1E88E5"
+                v-model="companyProvince"
+                label="Province"
+                readonly            
+            ></v-text-field></p>
+           
+
+        </v-row>
+
+        <v-row justify="center">
+            <p v-if="companyCheck != ''"><v-text-field
+                class="font-weight-bold"
+                outlined
+                prepend-icon="mdi-email"
+                color="#1E88E5"
+                v-model="companyEmail"
+                label="Email"
+                readonly            
+          ></v-text-field></p>
+        </v-row>
+
+
+         <v-row justify="center">
+            <v-btn rounded style="margin-left: 15px;" @click="clear" :elevation="10">
+              <v-icon dark left>mdi-cached</v-icon>
+            Clear</v-btn>
+            <v-btn rounded style="margin-left: 15px;" @click="back" :elevation="10">
+              <v-icon dark left>mdi-arrow-left-circle-outline</v-icon>Back</v-btn><br /><br /><br />
+        </v-row>
+
+          <div v-if="companyCheck">
+            <br />
+          </div>
+  </v-container>
+ </v-card>
 </template>
 
 <script>
 import http from "../http-common";
 export default {
+  name: "company",
   data() {
     return {
-      headers: [
-        {
-          align: "left",
-          sortable: false,
-          value: "Company_id"
-        },
-        { text: "Company Name", value: "name" },
-        { text: "Company Size", value: "size.name" },
-        { text: "Company Type", value: "type.name" },
-        { text: "Province", value: "province.name" },
-        { text: "Email", value: "email" },
-      ],
-      items: []
+      company: {
+        companyId: ""
+        
+      },
+      valid: false,
+      companyCheck: false,
+      companyName: "",
+      companyEmail: "",
+      companyType: "",
+      companySize: "",
+      companyProvince: "",
+      alert: "null",
+      alert1: "null"
     };
   },
   methods: {
-    getCompany() {
+    findCompany() {
       http
-        .get("/company")
+        .get("/company/" + this.company.companyId)
         .then(response => {
-          this.items = response.data;
-          console.log(response.data);
+          console.log(response);
+          if (response.data != null) {
+            this.alert = 'true';
+            this.companyName = response.data.name;
+            this.companyEmail = response.data.email;
+            this.companySize = response.data.size.name;
+            this.companyType = response.data.type.name;
+            this.companyProvince = response.data.province.name;
+            this.companyCheck = response.status;
+          } else {
+            this.alert = 'false';
+            this.companyCheck = false;
+          }          
         })
         .catch(e => {
           console.log(e);
         });
+      this.submitted = true;
     },
-    back() {
-      this.$router.push("/companychoice");
-    }
-  },
-  mounted() {
-    this.getCompany();
+
+    clear() {
+      this.$refs.form.reset();
+      this.companyCheck = false;
+      this.alert = 'clear';
+    },
+
+    back(){
+      this.$router.push("/Companychoice");
+    },
+
   }
+    
+  
 };
 </script>
