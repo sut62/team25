@@ -52,17 +52,6 @@ public class BenefitTests {
         assertEquals("must not be null", result.iterator().next().getMessage());
         assertEquals("name", result.iterator().next().getPropertyPath().toString());
     }
-   /* @Test
-    void b6007409_testPositionPattren(){
-        Position position = new Position();
-        position.setName("พนักงานบัญ+ชี");
-        Set<ConstraintViolation<Position>> result = validator.validate(position);
-        assertEquals(1, result.size());
-        ConstraintViolation<Position> message = result.iterator().next();
-        assertEquals("must match \"^[A-Za-z0-9ก-ฮะ-๙]*$\"",message.getMessage());
-        assertEquals("name",message.getPropertyPath().toString());
-    }*/
-
     @Test
     void b6020156_testBenefitSuccess() {
         Benefit benefit = new Benefit();

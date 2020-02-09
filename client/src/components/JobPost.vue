@@ -300,7 +300,6 @@ export default {
     mounted() {
       this.getPositions();
       this.getBenefits();
-      this.getCompanys();
   }
 };
 </script>
