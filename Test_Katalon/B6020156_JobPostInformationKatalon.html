@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>JobPostInformation Test Suite</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">JobPostInformationNotPass Test Case</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/LoginCompany<datalist><option>http://localhost:8080/LoginCompany</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=input-16<datalist><option>id=input-16</option><option>//input[@id='input-16']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div/div[2]/div/div/input</option><option>//input</option><option>css=#input-16</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=input-16<datalist><option>id=input-215</option><option>//input[@id='input-215']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div/div[2]/div/div/input</option><option>//input</option><option>css=#input-215</option><option>id=input-16</option></datalist></td><td>a@mail.com</td>
+</tr>
+<tr><td>click</td><td>id=input-21<datalist><option>id=input-21</option><option>//input[@id='input-21']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[5]/div/div/div[2]/div/div/input</option><option>//div[5]/div/div/div[2]/div/div/input</option><option>css=#input-21</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=input-21<datalist><option>id=input-220</option><option>//input[@id='input-220']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[5]/div/div/div[2]/div/div/input</option><option>//div[5]/div/div/div[2]/div/div/input</option><option>css=#input-220</option><option>id=input-21</option></datalist></td><td>aaaaaaaaaa</td>
+</tr>
+<tr><td>click</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[6]/div/button/span<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[6]/div/button/span</option><option>//div[6]/div/button/span</option><option>css=button.font-weight-black.v-btn.v-btn--rounded.theme--dark.elevation-5.v-size--default &gt; span.v-btn__content</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(//button[@type='button'])[3]<datalist><option>xpath=(//button[@type='button'])[3]</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div[2]/button</option><option>//div[2]/button</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div[2]/div/div/div/table/tbody/tr/td<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div[2]/div/div/div/table/tbody/tr/td</option><option>//td</option><option>css=td</option></datalist></td><td>Loading items...</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">JobPostInformationPass Test Case</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/LoginCompany<datalist><option>http://localhost:8080/LoginCompany</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=input-16<datalist><option>id=input-16</option><option>//input[@id='input-16']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div/div[2]/div/div/input</option><option>//input</option><option>css=#input-16</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=input-16<datalist><option>id=input-222</option><option>//input[@id='input-222']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div/div[2]/div/div/input</option><option>//input</option><option>css=#input-222</option><option>id=input-16</option></datalist></td><td>a@mail.com</td>
+</tr>
+<tr><td>click</td><td>id=input-21<datalist><option>id=input-21</option><option>//input[@id='input-21']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[5]/div/div/div[2]/div/div/input</option><option>//div[5]/div/div/div[2]/div/div/input</option><option>css=#input-21</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=input-21<datalist><option>id=input-227</option><option>//input[@id='input-227']</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[5]/div/div/div[2]/div/div/input</option><option>//div[5]/div/div/div[2]/div/div/input</option><option>css=#input-227</option><option>id=input-21</option></datalist></td><td>aaaaaaaaaa</td>
+</tr>
+<tr><td>click</td><td>xpath=(//button[@type='button'])[2]<datalist><option>xpath=(//button[@type='button'])[2]</option><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[6]/div/button</option><option>//div[6]/div/button</option><option>css=button.font-weight-black.v-btn.v-btn--rounded.theme--dark.elevation-5.v-size--default</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div[2]/button/span/font<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div/div[4]/div/div[2]/button/span/font</option><option>//div[2]/button/span/font</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div/div/div/div/h1<datalist><option>//div[@id='app']/div/main/div/div/aside/div[2]/div/div[3]/div/div/div/div/h1</option><option>//h1</option><option>css=h1.display-1.font-weight-bold</option></datalist></td><td>JobPost Information</td>
+</tr>
+</tbody></table>
+</body>
+</html>
