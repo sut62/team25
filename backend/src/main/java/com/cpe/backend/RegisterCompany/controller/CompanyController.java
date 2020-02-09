@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
+import java.util.Optional;
 
 import com.cpe.backend.RegisterCompany.entity.CompanySize;
 import com.cpe.backend.RegisterCompany.entity.CompanyType;
@@ -46,6 +47,13 @@ public class CompanyController {
     public Collection<Company> Companys() {
         return companyRepository.findAll().stream().collect(Collectors.toList());
     }
+
+    @GetMapping("/company/{id}")
+    public Optional<Company> Companys(@PathVariable Long id) {
+        Optional<Company> company = companyRepository.findById(id);
+        return company;
+    }
+
     @PostMapping("/company/{name}/{email}/{password}/{size_id}/{province_id}/{type_id}")
     public Company newCompany(Company newCompany,
    
