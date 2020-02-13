@@ -34,6 +34,12 @@
               </v-col>
             </v-col>
           </v-row>
+          <div v-if="alret1">
+            <v-alret type="success">พบข้อมูลที่บันทึก</v-alret>
+          </div>
+          <div v-else-if="!alret1">
+            <v-alret type="error">ไม่พบข้อมูลที่บันทึก</v-alret>
+          </div>
         </v-container>
 
         <br />
@@ -73,9 +79,20 @@ export default {
         .then(response => {
           this.items = response.data;
           console.log(response.data);
+          if (response.data != "") {
+            this.items = response.data;
+            this.alret1 = true;
+            console.log(response.data);
+            console.log("++++++++++++++");
+            console.log("true");
+          }else{
+            this.alrat1 = false;
+            console.log("false");
+          }
         })
         .catch(e => {
           console.log(e);
+          this.alert1 = "false";
         });
     },
     back() {
